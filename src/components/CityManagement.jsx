@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom';
 import Form from "./Form.jsx";
 import Grid from "./Grid.jsx";
 import "../App.css";
@@ -31,6 +30,7 @@ const CityManagement = () => {
         <h2><strong>Manage the cities as you wish.</strong></h2>
         <Form onEdit={onEdit} setOnEdit={setOnEdit} getCities={getCities} />
         <Grid cities={cities} setCities={setCities} setOnEdit={setOnEdit} />
+        <h2>Made by Ana Paula Borowsky de Borba</h2>
       </div>
     </>
   );

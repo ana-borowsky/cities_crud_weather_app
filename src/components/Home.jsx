@@ -58,7 +58,9 @@ const HomePage = () => {
           <p>Cities not found or loading...</p>
         )}
       </div>
+      <h2>Made by Ana Paula Borowsky de Borba</h2>
     </div>
+    
   );
 };
 
