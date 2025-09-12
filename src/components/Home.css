@@ -14,20 +14,6 @@ border-radius: 5px;
 border: 1px solid #ccc;
 }
 
-.input-container button {
-background-color: rgba(255, 255, 255, 0.1);
-color: white;
-padding: 10px 20px;
-border-radius: 5px;
-border: none;
-margin-left: 10px;
-cursor: pointer;
-}
-
-.input-container button:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
 .city-grid-container {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -56,18 +42,36 @@ grid-template-columns: repeat(3, minmax(250px, 1fr));
 }
 
 .manage-cities-btn {
-background-color: rgba(255, 255, 255, 0.1);
-color: white;
-padding: 15px 25px;
-text-align: center;
-text-decoration: none;
-display: block;
-margin: 50px auto 0;
-border-radius: 8px;
-transition: background-color 0.3s ease;
-clear: both;
+  /* Fundo e texto */
+  background-color: #FF5A02;
+  color: #000;
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: bold;
+  
+  /* Borda e sombra */
+  border: 2px solid #000;
+  box-shadow: 6px 6px 0px 0px #000;
+  
+  /* Layout e espaçamento */
+  padding: 12px 24px;
+  cursor: pointer;
+  
+  /* Efeito de transição suave */
+  transition: all 0.1s ease-in-out;
+
+  border-radius: 15px;
 }
 
 .manage-cities-btn:hover {
-background-color: rgba(255, 255, 255, 0.3);
+  background-color: #d34c03ff;
+  box-shadow: 4px 4px 0px 0px #000;
+  transform: translate(2px, 2px);
+}
+
+.manage-cities-btn:active {
+  background-color: #e9c46a;
+  box-shadow: 2px 2px 0px 0px #000;
+  transform: translate(4px, 4px);
 }

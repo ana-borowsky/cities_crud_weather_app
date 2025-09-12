@@ -21,19 +21,3 @@
 input::placeholder { 
   color: white;
 }
-
-.form-container button {
-    font-family: 'Concert One', sans-serif;
-    padding: 10px 20px;
-    background-color: rgba(var(--branco-translucido), 0.2);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.form-container button:hover {
-  box-shadow: 5px 5px 20px rgba(68, 68, 68, 0.2);
-}
