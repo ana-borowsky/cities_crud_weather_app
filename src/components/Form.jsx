@@ -66,7 +66,7 @@ const Form = ({ onEdit, setOnEdit, getCities }) => {
       <input name="timezone_seconds" type="number" placeholder="Timezone (seconds)" />
 
       <div className="buttons">
-        <button type="button" onClick={() => navigate('/')}>Back to Home</button>
+        <button className="back-btn" type="button" onClick={() => navigate('/')}>Back to Home</button>
         <button type="submit">Save</button>
       </div>
     </form>
