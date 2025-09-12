@@ -13,7 +13,7 @@ const CityManagement = () => {
 
   const getCities = async () => {
     try {
-      const res = await axios.get("http://localhost:8800/");
+      const res = await axios.get("http://localhost:8800/cities");
       setCities(res.data.sort((a, b) => (a.name > b.name ? 1 : -1)));
     } catch (error) {
       console.error(error);

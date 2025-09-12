@@ -12,7 +12,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchAllCities = async () => {
       try {
-        const response = await axios.get("http://localhost:8800/");
+        const response = await axios.get("http://localhost:8800/cities");
         setAllCities(response.data);
         const cityNames = cityInput.split(',').map(name => name.trim());
         const filtered = response.data.filter(city => cityNames.includes(city.name));
