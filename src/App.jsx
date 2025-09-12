@@ -22,7 +22,7 @@ const CityManagement = () => {
   };
 
   useEffect(() => {
-    getCities();
+    getCities(); cities
   }, []);
 
   return (

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./CityCard.css";
 
 const CityCard = ({ city }) => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API_KEY = 'YOUR_API_KEY';
+  const API_KEY = 'b7ffc9f8c3a6364da5b4124625785d0e';
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -35,13 +36,7 @@ const CityCard = ({ city }) => {
     : null;
 
   return (
-    <div style={{
-      backgroundColor: '#f5f5f5',
-      padding: '20px',
-      borderRadius: '10px',
-      boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-      textAlign: 'left'
-    }}>
+    <div className="city-card">
       {/* Exibe os dados do banco de dados */}
       <h3>{city.name}, {city.country}</h3>
       <p><strong>Longitude:</strong> {city.coord_lon}</p>
@@ -49,12 +44,17 @@ const CityCard = ({ city }) => {
       <p><strong>Fuso Horário:</strong> {city.timezone_seconds / 3600} horas</p>
 
       {/* Seção para os dados do clima, que são carregados via API */}
-      <hr style={{ margin: '15px 0' }} />
+      <hr className="separator" />
       <h4>Informações do Clima:</h4>
       {loading ? (
         <p>Carregando dados do clima...</p>
       ) : weatherData ? (
         <div>
+          <img
+            src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+            alt={weatherData.weather[0].description}
+            className="weather-icon"
+          />
           <p><strong>Horário Local:</strong> {localTime}</p>
           <p><strong>Temperatura:</strong> {weatherData.main.temp.toFixed(1)} °C</p>
           <p><strong>Sensação Térmica:</strong> {weatherData.main.feels_like.toFixed(1)} °C</p>

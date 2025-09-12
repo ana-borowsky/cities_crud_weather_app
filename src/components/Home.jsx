@@ -31,29 +31,17 @@ const HomePage = () => {
   };
 
   return (
-    <div className="container" style={{ textAlign: 'center', marginTop: '50px' }}>
+    <div className="container">
       <h1>ClimaMundo</h1>
       <div><p>Digite os nomes das cidades que você deseja ver separados por vírgula e em inglês:</p></div>
-      <div style={{ marginBottom: '20px' }}>
+      <div className="input-container">
         <input
           type="text"
           value={cityInput}
           onChange={(e) => setCityInput(e.target.value)}
           placeholder="Ex: Paris, New York, Tokyo"
-          style={{ width: '300px', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
         />
-        <button
-          onClick={handleFilterCities}
-          style={{
-            backgroundColor: '#4CAF50',
-            color: 'white',
-            padding: '10px 20px',
-            borderRadius: '5px',
-            border: 'none',
-            marginLeft: '10px',
-            cursor: 'pointer'
-          }}
-        >
+        <button onClick={handleFilterCities}>
           Mostrar Cidades
         </button>
       </div>

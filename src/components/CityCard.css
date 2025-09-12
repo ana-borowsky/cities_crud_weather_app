@@ -1,0 +1,17 @@
+.city-card {
+background-color: rgba(255, 255, 255, 0.1);
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+text-align: left;
+color: white;
+}
+
+.weather-icon {
+width: 80px;
+height: 80px;
+}
+
+.separator {
+margin: 15px 0;
+}
