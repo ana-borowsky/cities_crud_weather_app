@@ -21,7 +21,7 @@ const CityCard = ({ city }) => {
         );
         setWeatherData(response.data);
       } catch (error) {
-        console.error("Erro ao buscar dados do clima:", error);
+        console.error("Error fetching weather data:", error);
       } finally {
         setLoading(false);
       }
@@ -37,17 +37,18 @@ const CityCard = ({ city }) => {
 
   return (
     <div className="city-card">
-      {/* Exibe os dados do banco de dados */}
+      {/* Display database data */}
       <h3>{city.name}, {city.country}</h3>
-      <p><strong>Longitude:</strong> {city.coord_lon}</p>
-      <p><strong>Latitude:</strong> {city.coord_lat}</p>
-      <p><strong>Fuso Horário:</strong> {city.timezone_seconds / 3600} horas</p>
+      <p><strong>Local Time:</strong> {localTime}</p><br></br>
+      <p className="smaller"><strong>Longitude:</strong> {city.coord_lon}</p>
+      <p className="smaller"><strong>Latitude:</strong> {city.coord_lat}</p>
+      <p className="smaller"><strong>Timezone:</strong> {city.timezone_seconds / 3600} hours</p>
 
-      {/* Seção para os dados do clima, que são carregados via API */}
+      {/* Section for weather data, which is loaded via API */}
       <hr className="separator" />
-      <h4>Informações do Clima:</h4>
+      <h4>Weather Information:</h4>
       {loading ? (
-        <p>Carregando dados do clima...</p>
+        <p>Loading weather data...</p>
       ) : weatherData ? (
         <div>
           <img
@@ -55,16 +56,15 @@ const CityCard = ({ city }) => {
             alt={weatherData.weather[0].description}
             className="weather-icon"
           />
-          <p><strong>Horário Local:</strong> {localTime}</p>
-          <p><strong>Temperatura:</strong> {weatherData.main.temp.toFixed(1)} °C</p>
-          <p><strong>Sensação Térmica:</strong> {weatherData.main.feels_like.toFixed(1)} °C</p>
-          <p><strong>Condição:</strong> {weatherData.weather[0].description}</p>
-          <p><strong>Umidade:</strong> {weatherData.main.humidity} %</p>
-          <p><strong>Vento:</strong> {weatherData.wind.speed} m/s</p>
-          <p><strong>Pressão:</strong> {weatherData.main.pressure} hPa</p>
+          <p><strong>Temperature:</strong> {weatherData.main.temp.toFixed(1)} °C</p>
+          <p><strong>Feels Like:</strong> {weatherData.main.feels_like.toFixed(1)} °C</p>
+          <p><strong>Condition:</strong> {weatherData.weather[0].description}</p>
+          <p><strong>Humidity:</strong> {weatherData.main.humidity} %</p>
+          <p><strong>Wind:</strong> {weatherData.wind.speed} m/s</p>
+          <p><strong>Pressure:</strong> {weatherData.main.pressure} hPa</p>
         </div>
       ) : (
-        <p>Dados do clima não disponíveis.</p>
+        <p>Weather data not available.</p>
       )}
     </div>
   );

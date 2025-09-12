@@ -9,9 +9,9 @@ const Grid = ({ cities, setCities, setOnEdit }) => {
       await axios.delete(`http://localhost:8800/${id}`);
       const newArray = cities.filter((city) => city.id !== id);
       setCities(newArray);
-      console.log("Cidade deletada com sucesso!");
+      console.log("City deleted successfully!");
     } catch (error) {
-      console.error("Erro ao deletar cidade:", error);
+      console.error("Error deleting city:", error);
     }
 
     setOnEdit(null);
@@ -26,11 +26,11 @@ const Grid = ({ cities, setCities, setOnEdit }) => {
       <table className="data-grid">
         <thead>
           <tr>
-            <th>Nome</th>
-            <th>País</th>
+            <th>Name</th>
+            <th>Country</th>
             <th>Longitude</th>
             <th>Latitude</th>
-            <th>Fuso Horário</th>
+            <th>Timezone (seconds)</th>
             <th></th>
             <th></th>
           </tr>

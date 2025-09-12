@@ -17,13 +17,24 @@
 }
 
 .city-card h3 {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
+h4 {
+  font-size: 1.3rem; 
+}
+
+
 .city-card p {
   margin: 4px 0;
+  font-weigth: bold;
+  font-size:1rem;
+}
+
+.smaller {
+  font-size: 0.9rem;
 }
 
 .city-card strong {

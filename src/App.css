@@ -1,22 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
 
 html {
   margin: 0;
   box-sizing: border-box;
-  background-color: #2185F7;
+  background-color: #aed4ffff;
   font-family: 'Roboto', sans-serif;
 }
 
 p {
   font-size: 1rem;
-  font-weight: bold;
 }
 
 input {
   border-radius: 15px;
-  border: 2px solid #000; /* Borda sólida e preta */
+  border: 2px solid #000;
   height: 50px;
   padding-left: 20px;
   font-size: 15px;
