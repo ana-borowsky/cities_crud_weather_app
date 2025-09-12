@@ -20,7 +20,19 @@ html {
 }
 
 p {
-  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+input {
+  border-radius: 15px;
+  border: 2px solid #000; /* Borda sólida e preta */
+  margin-right: 60px;
+  width: 500px;
+  height: 50px;
+  padding-left: 20px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
 }
 
 .container {
@@ -29,44 +41,31 @@ p {
     flex-direction: column;
     align-items: center;
     margin: 20px auto;
-    gap: 50px;
     flex-wrap: wrap;
     padding: 50px;
-    border-radius: 40px;
-    background-color: rgba(var(--branco-translucido), 0.1);
-    backdrop-filter: blur(50px);
 }
 
 h1 {
   font-family: 'Notable', sans-serif;
-  font-size: 40px;
-  color: white;
+  font-size: 80px;
+  color: black;
 }
 
 button {
-  /* Fundo e texto */
   background-color: #FF5A02;
   color: #000;
-
   font-size: 1rem;
   font-weight: bold;
-  
-  /* Borda e sombra */
   border: 2px solid #000;
   box-shadow: 6px 6px 0px 0px #000;
-  
-  /* Layout e espaçamento */
   padding: 12px 24px;
   cursor: pointer;
-  
-  /* Efeito de transição suave */
   transition: all 0.1s ease-in-out;
-
   border-radius: 15px;
+  width: 200px;
 }
 
 button:hover {
-  background-color: #d34c03ff;
   box-shadow: 4px 4px 0px 0px #000;
   transform: translate(2px, 2px);
 }
@@ -75,4 +74,10 @@ button:active {
   background-color: #e9c46a;
   box-shadow: 2px 2px 0px 0px #000;
   transform: translate(4px, 4px);
+}
+
+.input-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

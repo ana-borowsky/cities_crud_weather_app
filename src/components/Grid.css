@@ -1,17 +1,17 @@
-.user-grid {
+.data-grid {
     width: 100%;
     margin: 20px auto;
     border-collapse: collapse;
     color: white;
 }
 
-.user-grid th, .user-grid td {
+.data-grid th, .data-grid td {
     border: none;
     padding: 12px;
     text-align: left;
 }
 
-.user-grid th {
+.data-grid th {
     background-color: rgba(var(--branco-translucido), 0.2);
     color: white;
     height: 30px;
@@ -19,11 +19,11 @@
     font-size: 20px;
 }
 
-.user-grid tr:nth-child(even) {
+.data-grid tr:nth-child(even) {
     background-color: rgba(var(--branco-translucido), 0.1);
 }
 
-.user-grid tr:hover {
+.data-grid tr:hover {
     background-color: rgba(var(--branco-translucido), 0.5);
 }
 

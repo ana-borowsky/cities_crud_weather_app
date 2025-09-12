@@ -7,7 +7,7 @@ import './Home.css';
 const HomePage = () => {
   const [allCities, setAllCities] = useState([]);
   const [displayedCities, setDisplayedCities] = useState([]);
-  const [cityInput, setCityInput] = useState('Curitiba, London, Tokyo, New York, Santiago, Buenos Aires');
+  const [cityInput, setCityInput] = useState('Curitiba, London, Tokyo, New York, Belém, São Paulo');
 
   useEffect(() => {
     const fetchAllCities = async () => {
@@ -33,7 +33,7 @@ const HomePage = () => {
   return (
     <div className="container">
       <h1>ClimaMundo</h1>
-      <div><p>Digite os nomes das cidades que você deseja ver separados por vírgula e em inglês:</p></div>
+      <div><p>Find the weather and time of cities around the world.</p></div>
       <div className="input-container">
         <input
           type="text"
@@ -42,8 +42,11 @@ const HomePage = () => {
           placeholder="Ex: Paris, New York, Tokyo"
         />
         <button onClick={handleFilterCities}>
-          Mostrar Cidades
+          Buscar Cidades
         </button>
+        <Link to="/cities" className="manage-cities-btn">
+          Gerenciar Cidades
+        </Link>
       </div>
 
       <div className="city-grid-container">
@@ -55,9 +58,6 @@ const HomePage = () => {
           <p>Nenhuma cidade encontrada ou carregando...</p>
         )}
       </div>
-      <Link to="/cities" className="manage-cities-btn">
-        Ir para Gerenciamento de Cidades
-      </Link>
     </div>
   );
 };

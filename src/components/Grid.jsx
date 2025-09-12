@@ -23,7 +23,7 @@ const Grid = ({ cities, setCities, setOnEdit }) => {
 
   return (
     <div className="table-container">
-      <table className="user-grid">
+      <table className="data-grid">
         <thead>
           <tr>
             <th>Nome</th>
