@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import CityCard from "./CityCard.jsx";
+import './Home.css';
 
 const HomePage = () => {
   const [allCities, setAllCities] = useState([]);
@@ -31,8 +32,8 @@ const HomePage = () => {
 
   return (
     <div className="container" style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>Bem-vindo ao App de Gerenciamento de Cidades!</h1>
-      <p>Digite os nomes das cidades que você deseja ver (separados por vírgula):</p>
+      <h1>ClimaMundo</h1>
+      <div><p>Digite os nomes das cidades que você deseja ver separados por vírgula e em inglês:</p></div>
       <div style={{ marginBottom: '20px' }}>
         <input
           type="text"
@@ -57,7 +58,7 @@ const HomePage = () => {
         </button>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginTop: '30px' }}>
+      <div className="city-grid-container">
         {displayedCities.length > 0 ? (
           displayedCities.map((city) => (
             <CityCard key={city.id} city={city} />
@@ -66,16 +67,7 @@ const HomePage = () => {
           <p>Nenhuma cidade encontrada ou carregando...</p>
         )}
       </div>
-      <Link to="/cities" style={{
-        backgroundColor: '#4CAF50',
-        color: 'white',
-        padding: '15px 25px',
-        textAlign: 'center',
-        textDecoration: 'none',
-        display: 'inline-block',
-        borderRadius: '8px',
-        marginTop: '50px'
-      }}>
+      <Link to="/cities" className="manage-cities-btn">
         Ir para Gerenciamento de Cidades
       </Link>
     </div>

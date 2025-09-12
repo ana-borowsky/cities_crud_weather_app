@@ -14,7 +14,7 @@ const CityManagement = () => {
 
   const getCities = async () => {
     try {
-      const res = await axios.get("http://localhost:8800/cities");
+      const res = await axios.get("http://localhost:8800/");
       setCities(res.data.sort((a, b) => (a.name > b.name ? 1 : -1)));
     } catch (error) {
       console.error(error);
@@ -28,7 +28,7 @@ const CityManagement = () => {
   return (
     <>
       <div className="container">
-        <h1>Gerenciamento de Cidades</h1>
+        <h1>Gerencie as Cidades</h1>
         <Form onEdit={onEdit} setOnEdit={setOnEdit} getCities={getCities} />
         <Grid cities={cities} setCities={setCities} setOnEdit={setOnEdit} />
       </div>
