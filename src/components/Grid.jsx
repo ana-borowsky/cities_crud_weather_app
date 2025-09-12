@@ -26,7 +26,7 @@ const Grid = ({ cities, setCities, setOnEdit }) => {
       <table className="user-grid">
         <thead>
           <tr>
-            <th>Nome</th>
+            <th>Cidade</th>
             <th>País</th>
             <th>Longitude</th>
             <th>Latitude</th>

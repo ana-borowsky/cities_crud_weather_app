@@ -12,7 +12,7 @@ const App = () => {
 
   const getCities = async () => {
     try {
-      const res = await axios.get("http://localhost:8800/cities");
+      const res = await axios.get("http://localhost:8800/");
       setCities(res.data.sort((a, b) => (a.name > b.name ? 1 : -1)));
     } catch (error) {
       console.error(error);
