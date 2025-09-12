@@ -1,41 +1,43 @@
 .data-grid {
-    width: 100%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    color: white;
+  width: 700px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  color: #000;
+  border: 2px solid #000;
+  box-shadow: 8px 8px 0px 0px #000;
+  font-weight: bold;
 }
 
 .data-grid th, .data-grid td {
-    border: none;
-    padding: 12px;
-    text-align: left;
+  border: 2px solid #000;
+  padding: 12px;
+  text-align: left;
 }
 
 .data-grid th {
-    background-color: rgba(var(--branco-translucido), 0.2);
-    color: white;
-    height: 30px;
-    font-family: 'Concert One', sans-serif;
-    font-size: 20px;
+  background-color: #fffc69ff;
+  color: #000;
+  height: 30px;
+  font-size: 20px;
 }
 
 .data-grid tr:nth-child(even) {
-    background-color: rgba(var(--branco-translucido), 0.1);
+  background-color: #ffffff;
 }
 
 .data-grid tr:hover {
-    background-color: rgba(var(--branco-translucido), 0.5);
+  background-color: #FF5A02;
 }
 
 .icon-edit, .icon-delete {
-    cursor: pointer;
-    font-size: 18px;
+  cursor: pointer;
+  font-size: 18px;
 }
 
 .icon-edit {
-    color: white;
+  color: black;
 }
 
 .icon-delete {
-    color: white;
+  color: black;
 }

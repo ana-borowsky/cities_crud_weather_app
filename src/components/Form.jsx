@@ -1,9 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Form.css";
 
 const Form = ({ onEdit, setOnEdit, getCities }) => {
   const ref = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (onEdit) {
@@ -36,9 +38,9 @@ const Form = ({ onEdit, setOnEdit, getCities }) => {
 
     try {
       if (onEdit) {
-        await axios.put(`http://localhost:8800/${onEdit.id}`, cityData);
+        await axios.put(`http://localhost:8800/cities/${onEdit.id}`, cityData);
       } else {
-        await axios.post("http://localhost:8800/", cityData);
+        await axios.post("http://localhost:8800/cities", cityData);
       }
 
       city.name.value = "";
@@ -61,9 +63,12 @@ const Form = ({ onEdit, setOnEdit, getCities }) => {
       <input name="country" placeholder="País" />
       <input name="coord_lon" type="number" step="any" placeholder="Longitude" />
       <input name="coord_lat" type="number" step="any" placeholder="Latitude" />
-      <input name="timezone_seconds" type="number" placeholder="Fuso Horário (s)" />
+      <input name="timezone_seconds" type="number" placeholder="Fuso Horário" />
 
-      <button type="submit">Salvar</button>
+      <div className="buttons">
+        <button type="submit">Salvar</button>
+        <button type="button" onClick={() => navigate('/')}>Voltar para Início</button>
+      </div>
     </form>
   );
 };

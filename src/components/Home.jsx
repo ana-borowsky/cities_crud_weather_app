@@ -32,8 +32,8 @@ const HomePage = () => {
 
   return (
     <div className="container">
-      <h1>ClimaMundo</h1>
-      <div><p>Find the weather and time of cities around the world.</p></div>
+        <h1>Urban Wheather</h1>
+        <p>Find the weather and time of cities around the world.</p>
       <div className="input-container">
         <input
           type="text"
@@ -42,10 +42,10 @@ const HomePage = () => {
           placeholder="Ex: Paris, New York, Tokyo"
         />
         <button onClick={handleFilterCities}>
-          Buscar Cidades
+          Search Cities
         </button>
         <Link to="/cities" className="manage-cities-btn">
-          Gerenciar Cidades
+          Manage Cities
         </Link>
       </div>
 
@@ -55,7 +55,7 @@ const HomePage = () => {
             <CityCard key={city.id} city={city} />
           ))
         ) : (
-          <p>Nenhuma cidade encontrada ou carregando...</p>
+          <p>Cities not found or loading...</p>
         )}
       </div>
     </div>

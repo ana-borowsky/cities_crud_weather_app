@@ -27,10 +27,8 @@ const CityManagement = () => {
   return (
     <>
       <div className="container">
-        <h1>Gerencie as Cidades</h1>
-        <Link to="/" className="manage-cities-btn" style={{ marginBottom: "20px" }}>
-          Voltar para a Página Inicial
-        </Link>
+        <h1>Urban Wheather</h1>
+        <p>Manage the cities as you wish.</p>
         <Form onEdit={onEdit} setOnEdit={setOnEdit} getCities={getCities} />
         <Grid cities={cities} setCities={setCities} setOnEdit={setOnEdit} />
       </div>

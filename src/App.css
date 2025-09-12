@@ -2,20 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
 
-:root {
-  --branco-translucido: 255, 255, 255;
-  --azul-translucido: 66, 140, 251;
-}
-
 html {
   margin: 0;
-  padding: 60px;
   box-sizing: border-box;
-  background-image: url('./assets/background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+  background-color: #2185F7;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -27,12 +17,12 @@ p {
 input {
   border-radius: 15px;
   border: 2px solid #000; /* Borda sólida e preta */
-  margin-right: 60px;
-  width: 500px;
   height: 50px;
   padding-left: 20px;
   font-size: 15px;
   font-family: Arial, sans-serif;
+  width: 50%;
+  font-weight: bold;
 }
 
 .container {
@@ -49,6 +39,7 @@ h1 {
   font-family: 'Notable', sans-serif;
   font-size: 80px;
   color: black;
+  letter-spacing: 10px;
 }
 
 button {
@@ -80,4 +71,5 @@ button:active {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    font-weight: bold;
 }
