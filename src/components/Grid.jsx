@@ -5,14 +5,14 @@ import "./Grid.css";
 
 const Grid = ({ cities, setCities, setOnEdit }) => {
   const handleDelete = async (id) => {
-    await axios
-      .delete("http://localhost:8800/cities/" + id)
-      .then(({ data }) => {
-        const newArray = cities.filter((city) => city.id !== id);
-        setCities(newArray);
-        alert(data);
-      })
-      .catch(({ data }) => alert(data));
+    try {
+      await axios.delete(`http://localhost:8800/${id}`);
+      const newArray = cities.filter((city) => city.id !== id);
+      setCities(newArray);
+      console.log("Cidade deletada com sucesso!");
+    } catch (error) {
+      console.error("Erro ao deletar cidade:", error);
+    }
 
     setOnEdit(null);
   };
@@ -26,7 +26,7 @@ const Grid = ({ cities, setCities, setOnEdit }) => {
       <table className="user-grid">
         <thead>
           <tr>
-            <th>Cidade</th>
+            <th>Nome</th>
             <th>País</th>
             <th>Longitude</th>
             <th>Latitude</th>

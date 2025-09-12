@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 import Form from "./Form.jsx";
 import Grid from "./Grid.jsx";
 import "../App.css";
@@ -27,6 +28,9 @@ const CityManagement = () => {
     <>
       <div className="container">
         <h1>Gerencie as Cidades</h1>
+        <Link to="/" className="manage-cities-btn" style={{ marginBottom: "20px" }}>
+          Voltar para a Página Inicial
+        </Link>
         <Form onEdit={onEdit} setOnEdit={setOnEdit} getCities={getCities} />
         <Grid cities={cities} setCities={setCities} setOnEdit={setOnEdit} />
       </div>
