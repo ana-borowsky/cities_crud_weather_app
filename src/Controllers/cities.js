@@ -22,7 +22,7 @@ export const addCity = (req, res) => {
 
   db.query(q, [values], (err) => {
     if (err) return res.json(err);
-    return res.status(200).json("Cidade criada com sucesso.");
+    return res.status(200).json("City created succesfully.");
   });
 };
 
@@ -40,7 +40,7 @@ export const updateCity = (req, res) => {
 
   db.query(q, [...values, req.params.id], (err) => {
     if (err) return res.json(err);
-    return res.status(200).json("Cidade atualizada com sucesso.");
+    return res.status(200).json("City updated successfuly.");
   });
 };
 
@@ -49,6 +49,6 @@ export const deleteCity = (req, res) => {
 
   db.query(q, [req.params.id], (err) => {
     if (err) return res.json(err);
-    return res.status(200).json("Cidade deletada com sucesso.");
+    return res.status(200).json("City deleted successfully.");
   });
 };

@@ -38,9 +38,9 @@ const Form = ({ onEdit, setOnEdit, getCities }) => {
 
     try {
       if (onEdit) {
-        await axios.put(`http://localhost:8800/${onEdit.id}`, cityData);
+        await axios.put(`http://localhost:8800/cities/${onEdit.id}`, cityData);
       } else {
-        await axios.post("http://localhost:8800/", cityData);
+        await axios.post("http://localhost:8800/cities", cityData);
       }
 
       city.name.value = "";
