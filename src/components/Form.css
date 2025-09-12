@@ -1,0 +1,39 @@
+
+.form-container {
+    display: flex;
+    justify-content: center; 
+    width: 90%; 
+    gap: 10px;
+}
+
+.form-container input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    height: 30px;
+    border: 1px solid #ccc; 
+    background-color: transparent;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+}
+
+input::placeholder { 
+  color: white;
+}
+
+.form-container button {
+    font-family: 'Concert One', sans-serif;
+    padding: 10px 20px;
+    background-color: rgba(var(--branco-translucido), 0.2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-container button:hover {
+  box-shadow: 5px 5px 20px rgba(68, 68, 68, 0.2);
+}

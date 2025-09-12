@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+:root {
+  --branco-translucido: 255, 255, 255;
+  --azul-translucido: 66, 140, 251;
+}
+
+html {
+  margin: 0;
+  padding: 60px;
+  box-sizing: border-box;
+  background-image: url('./assets/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center; 
+    width: 80%; 
+    margin: 20px auto;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 50px;
+    border-radius: 40px;
+    background-color: rgba(var(--branco-translucido), 0.1);
+    backdrop-filter: blur(50px);
+    box-shadow: 5px 5px 20px rgba(0, 20, 109, 0.2);
+}
+
+h1 {
+  font-family: 'Concert One', sans-serif;
+  font-size: 40px;
+  color: white;
+}

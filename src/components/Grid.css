@@ -1,0 +1,41 @@
+.user-grid {
+    width: 91%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    color: white;
+}
+
+.user-grid th, .user-grid td {
+    border: none;
+    padding: 12px;
+    text-align: left;
+}
+
+.user-grid th {
+    background-color: rgba(var(--branco-translucido), 0.2);
+    color: white;
+    height: 30px;
+    font-family: 'Concert One', sans-serif;
+    font-size: 20px;
+}
+
+.user-grid tr:nth-child(even) {
+    background-color: rgba(var(--branco-translucido), 0.1);
+}
+
+.user-grid tr:hover {
+    background-color: rgba(var(--branco-translucido), 0.5);
+}
+
+.icon-edit, .icon-delete {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.icon-edit {
+    color: white;
+}
+
+.icon-delete {
+    color: white;
+}
