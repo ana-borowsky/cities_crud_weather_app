@@ -33,7 +33,7 @@ const HomePage = () => {
   return (
     <div className="container">
         <h1>Urban Wheather</h1>
-      <p><strong>Find the weather and time of cities around the world.</strong></p>
+      <h2><strong>Find the weather and time of cities around the world.</strong></h2>
       <div className="input-container">
         <input
           type="text"

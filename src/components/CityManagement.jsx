@@ -28,7 +28,7 @@ const CityManagement = () => {
     <>
       <div className="container">
         <h1>Urban Wheather</h1>
-        <p><strong>Manage the cities as you wish.</strong></p>
+        <h2><strong>Manage the cities as you wish.</strong></h2>
         <Form onEdit={onEdit} setOnEdit={setOnEdit} getCities={getCities} />
         <Grid cities={cities} setCities={setCities} setOnEdit={setOnEdit} />
       </div>

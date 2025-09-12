@@ -11,6 +11,10 @@ p {
   font-size: 1rem;
 }
 
+h2 {
+  margin-bottom: 70px;
+}
+
 input {
   border-radius: 15px;
   border: 2px solid #000;
