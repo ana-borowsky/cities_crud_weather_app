@@ -32,7 +32,7 @@ const CityCard = ({ city }) => {
 
   const timezoneHours = weatherData ? weatherData.timezone / 3600 : null;
   const localTime = weatherData
-    ? new Date((new Date().getTime() / 1000 + weatherData.timezone - new Date().getTimezoneOffset() * 60) * 1000).toLocaleTimeString()
+    ? new Date(Date.now() + (weatherData.timezone * 1000) + (new Date().getTimezoneOffset() * 60000)).toLocaleTimeString()
     : null;
 
   return (
@@ -40,9 +40,9 @@ const CityCard = ({ city }) => {
       {/* Display database data */}
       <h3>{city.name}, {city.country}</h3>
       <p><strong>Local Time:</strong> {localTime}</p><br></br>
-      <p className="smaller"><strong>Longitude:</strong> {city.coord_lon}</p>
-      <p className="smaller"><strong>Latitude:</strong> {city.coord_lat}</p>
-      <p className="smaller"><strong>Timezone:</strong> {city.timezone_seconds / 3600} hours</p>
+      <p><strong>Longitude:</strong> {city.coord_lon}</p>
+      <p><strong>Latitude:</strong> {city.coord_lat}</p>
+      <p><strong>Timezone:</strong> {city.timezone_seconds / 3600} hours</p>
 
       {/* Section for weather data, which is loaded via API */}
       <hr className="separator" />

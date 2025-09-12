@@ -26,15 +26,10 @@ h4 {
   font-size: 1.3rem; 
 }
 
-
 .city-card p {
   margin: 4px 0;
   font-weigth: bold;
   font-size:1rem;
-}
-
-.smaller {
-  font-size: 0.9rem;
 }
 
 .city-card strong {
