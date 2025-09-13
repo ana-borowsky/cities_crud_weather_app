@@ -319,6 +319,7 @@ hr, .separator {
   text-align: left;
   font-family: Arial, sans-serif;
   border-radius: 3px;
+  width: 320px;
 }
 
 .city-card:hover {

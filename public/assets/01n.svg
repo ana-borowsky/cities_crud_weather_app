@@ -1,3 +1,49 @@
-<svg width="91" height="91" viewBox="0 0 91 91" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M37.5756 6.47704C40.9953 5.78601 43.4545 9.69023 41.3544 12.4761C37.9108 17.0439 36.0208 22.5924 36.0208 28.4376C36.0208 43.0962 47.9039 54.9793 62.5625 54.9793C68.4078 54.9793 73.9565 53.0892 78.5233 49.6462C81.309 47.546 85.2133 50.0051 84.5224 53.4248C80.7982 71.8577 64.5335 85.3126 45.5 85.3126C23.5122 85.3126 5.6875 67.4879 5.6875 45.5001C5.6875 26.4667 19.1424 10.2019 37.5756 6.47704Z" fill="white"/>
-</svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="15.67696mm"
+   height="15.677097mm"
+   viewBox="0 0 15.67696 15.677097"
+   version="1.1"
+   id="svg2100"
+   xml:space="preserve"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="01n.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview2102"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="3.0003928"
+     inkscape:cx="77.656498"
+     inkscape:cy="131.48278"
+     inkscape:window-width="1854"
+     inkscape:window-height="1009"
+     inkscape:window-x="66"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" /><defs
+     id="defs2097" /><g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(28.429164,-22.011362)"><g
+       style="fill:#ffffff"
+       id="g2153"
+       transform="matrix(0.14725363,0,0,0.14725363,-27.150279,22.744931)"><path
+         fill-rule="evenodd"
+         clip-rule="evenodd"
+         d="m 37.5756,6.47704 c 3.4197,-0.69103 5.8789,3.21319 3.7788,5.99906 -3.4436,4.5678 -5.3336,10.1163 -5.3336,15.9615 0,14.6586 11.8831,26.5417 26.5417,26.5417 5.8453,0 11.394,-1.8901 15.9608,-5.3331 2.7857,-2.1002 6.69,0.3589 5.9991,3.7786 C 80.7982,71.8577 64.5335,85.3126 45.5,85.3126 23.5122,85.3126 5.6875,67.4879 5.6875,45.5001 5.6875,26.4667 19.1424,10.2019 37.5756,6.47704 Z"
+         fill="#ffffff"
+         id="path2144"
+         style="fill:#ffffff" /></g></g></svg>
