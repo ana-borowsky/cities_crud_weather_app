@@ -23,7 +23,7 @@ const CityCard = ({ city }) => {
         );
 
         if (response.data.cod === "404") {
-          setApiError("No weather data available for this location");
+          setApiError("No weather data available for this location.");
           setWeatherData(null);
         } else {
           setWeatherData(response.data);
@@ -36,7 +36,7 @@ const CityCard = ({ city }) => {
           error.response.data &&
           error.response.data.cod === "404"
         ) {
-          setApiError("No weather data available for this location");
+          setApiError("No weather data available for this location.");
         } else if (
           error.response &&
           error.response.data &&
@@ -111,10 +111,6 @@ const CityCard = ({ city }) => {
               />
             </div>
           <p>{apiError}</p>
-          <p className="smaller">
-            Searched for: {city.name}, {city.country}
-          </p>
-
         </div>
       ) : weatherData ? (
         <div>
