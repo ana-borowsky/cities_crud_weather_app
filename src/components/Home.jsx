@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import CityCard from "./CityCard.jsx";
+import Autor from "./Autor";
 import '../Styles.css';
 
 const HomePage = () => {
@@ -59,7 +60,7 @@ const HomePage = () => {
           <p>Cities not found or loading...</p>
         )}
       </div>
-      <h4>Made by Ana Paula Borowsky de Borba</h4>
+      <Autor />
     </div>
     
   );

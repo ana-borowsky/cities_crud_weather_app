@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import CityForm from "./CityForm.jsx";
+import Autor from "./Autor";
 import "../Styles.css";
 
 const AddCity = () => {
@@ -17,7 +18,7 @@ const AddCity = () => {
 
       <CityForm onSuccess={handleSuccess} />
 
-      <h4>Made by Ana Paula Borowsky de Borba</h4>
+      <Autor />
     </div>
   );
 };

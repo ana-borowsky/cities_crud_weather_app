@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import CityForm from "./CityForm.jsx";
+import Autor from "./Autor";
 import { useToast } from "../context/ToastContext";
 import "../Styles.css";
 
@@ -48,7 +49,7 @@ const EditCity = () => {
 
       <CityForm city={city} onSuccess={handleSuccess} />
 
-      <h4>Made by Ana Paula Borowsky de Borba</h4>
+      <Autor />
     </div>
   );
 };

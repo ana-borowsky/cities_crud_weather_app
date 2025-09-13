@@ -41,10 +41,13 @@ body {
   height: 100%;
 }
 
-p {
-  font-size: 1rem;
-  margin: 4px 0;
-  font-weight: bold;
+/* Componente: Títulos */
+h1 {
+  font-family: 'Notable', sans-serif;
+  font-size: 80px;
+  color: var(--primary-black);
+  letter-spacing: 10px;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -54,8 +57,12 @@ h2 {
 
 h4 {
   font-size: 1.3rem; 
-  margin-top: 30px;
   font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-size: 1rem;
+  margin: 4px 0;
 }
 
 /* Componente: Container principal */
@@ -71,20 +78,11 @@ h4 {
   gap: 10px;
 }
 
-/* Componente: Títulos */
-h1 {
-  font-family: 'Notable', sans-serif;
-  font-size: 80px;
-  color: var(--primary-black);
-  letter-spacing: 10px;
-  margin-bottom: 20px;
-}
-
 /* Componente: Inputs */
 input {
   border-radius: 15px;
   border: 2px solid var(--primary-black);
-  height: 50px;
+  height: 55px;
   padding-left: 20px;
   font-size: 15px;
   font-family: Arial, sans-serif;
@@ -200,11 +198,10 @@ hr, .separator {
 .table-container {
   width: 100%;
   overflow-x: auto;
-  margin: 20px 0;
 }
 
 .data-grid {
-  width: 100%;
+  width: 95%;
   margin: 20px auto;
   border-collapse: collapse;
   color: var(--primary-black);
@@ -222,7 +219,7 @@ hr, .separator {
 .data-grid th {
   background-color: var(--primary-yellow);
   color: var(--primary-black);
-  height: 30px;
+  height: 80px;
   font-size: 20px;
 }
 
@@ -239,7 +236,7 @@ hr, .separator {
   cursor: pointer;
   font-size: 18px;
   color: var(--primary-black);
-  margin: 0 5px;
+  margin: 0 10px;
 }
 
 .icon-edit:hover, .icon-delete:hover {
@@ -307,6 +304,13 @@ hr, .separator {
 .city-card strong {
   font-weight: bold;
   color: var(--primary-black);
+}
+
+/* imagens */
+.image {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .weather-icon {
@@ -401,9 +405,12 @@ hr, .separator {
 .action-buttons {
   display: flex;
   gap: 15px;
-  margin-bottom: 20px;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.autor {
+  margin-top: 60px;
 }
 
 /* Classes para textos menores */

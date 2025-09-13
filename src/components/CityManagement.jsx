@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Form from "./CityForm.jsx";
 import Grid from "./Grid.jsx";
+import Autor from "./Autor";
 import { useToast } from "../context/ToastContext";
 import "../Styles.css";
 
@@ -32,7 +33,7 @@ const CityManagement = () => {
         <h2><strong>Manage the cities as you wish.</strong></h2>
         <Form onEdit={onEdit} setOnEdit={setOnEdit} getCities={getCities} />
         <Grid cities={cities} setCities={setCities} setOnEdit={setOnEdit} />
-        <h4>Made by Ana Paula Borowsky de Borba</h4>
+        <Autor />
       </div>
     </>
   );

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Grid from "./Grid.jsx";
+import Autor from "./Autor";
 import { useToast } from "../context/ToastContext";
 import "../Styles.css";
 
@@ -47,7 +48,7 @@ const CityList = () => {
         <Grid cities={cities} setCities={setCities} getCities={getCities} />
       )}
 
-      <h4>Made by Ana Paula Borowsky de Borba</h4>
+      <Autor />
     </div>
   );
 };
