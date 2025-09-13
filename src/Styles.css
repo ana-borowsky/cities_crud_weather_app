@@ -6,17 +6,18 @@
   --primary-yellow: #fffc69;
   --primary-black: #000000;
   --primary-white: #ffffff;
+
+  /* Cores secundárias */
+  --secondary-blue: #003879ff;
+  --secondary-light-blue: #5ea5f7;
+
   
   /* Cores de fundo */
-  --bg-light-blue: #cad6e4;
-  --bg-card-hover: #5ea5f7;
+  --bg-light-blue: #e7e7e7ff;
   
   /* Cores de status */
   --success-green: #4caf50;
   --error-red: #f44336;
-  
-  /* Cores de texto */
-  --text-placeholder: #89a5c5;
 }
 
 /* Importação de fontes */
@@ -92,7 +93,7 @@ input {
 }
 
 input::placeholder {
-  color: var(--text-placeholder);
+  color: var(--secondary-light-blue);
 }
 
 /* Componente: Input container */
@@ -228,7 +229,7 @@ hr, .separator {
 }
 
 .data-grid tr:hover {
-  background-color: var(--bg-card-hover);
+  background-color: var(--secondary-light-blue);
 }
 
 /* Componente: Ícones */
@@ -289,7 +290,6 @@ hr, .separator {
 }
 
 .city-card:hover {
-  background-color: var(--bg-card-hover);
   transform: translateY(-5px);
   box-shadow: 10px 10px 0px 0px var(--primary-black);
 }
@@ -305,6 +305,24 @@ hr, .separator {
   font-weight: bold;
   color: var(--primary-black);
 }
+
+/* Modo noturno para CityCard */
+.city-card.night-mode {
+  background-color: var(--secondary-blue);
+  color:  var(--primary-white);
+}
+
+.city-card.night-mode h3,
+.city-card.night-mode h4,
+.city-card.night-mode p,
+.city-card.night-mode strong {
+  color:  var(--primary-white)!important; 
+}
+
+.city-card.night-mode .separator {
+  border-color: var(--primary-white);
+}
+
 
 /* imagens */
 .image {
@@ -353,24 +371,6 @@ hr, .separator {
 .toast-message {
   flex-grow: 1;
   margin-right: 15px;
-}
-
-.toast-close {
-  background: none;
-  border: none;
-  color: var(--primary-white);
-  font-size: 20px;
-  cursor: pointer;
-  padding: 0;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.toast-close:hover {
-  opacity: 0.8;
 }
 
 /* Animações */

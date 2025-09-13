@@ -2,52 +2,15 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Styles.css";
 
-// Importe todas as imagens que você precisa
-import Clear from "../assets/01d.svg";
-import ClearNight from "../assets/01n.svg";
-import FewClouds from "../assets/02d.svg";
-import FewCloudsNight from "../assets/02n.svg";
-import ScatteredClouds from "../assets/03d.svg";
-import ScatteredCloudsNight from "../assets/03n.svg";
-import BrokenClouds from "../assets/04d.svg";
-import BrokenCloudsNight from "../assets/04n.svg";
-import ShowerRain from "../assets/09d.svg";
-import ShowerRainNight from "../assets/09n.svg";
-import Rain from "../assets/10d.svg";
-import RainNight from "../assets/10n.svg";
-import Thunderstorm from "../assets/11d.svg";
-import ThunderstormNight from "../assets/11n.svg";
-import Snow from "../assets/13d.svg";
-import SnowNight from "../assets/13n.svg";
-import Mist from "../assets/50d.svg";
-import MistNight from "../assets/50n.svg";
-
 const CityCard = ({ city }) => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isNight, setIsNight] = useState(false);
 
   const API_KEY = 'b7ffc9f8c3a6364da5b4124625785d0e';
 
-  // Mapeamento dos ícones para imagens locais
-  const weatherIcons = {
-    "01d": Clear,
-    "01n": ClearNight,
-    "02d": FewClouds,
-    "02n": FewCloudsNight,
-    "03d": ScatteredClouds,
-    "03n": ScatteredCloudsNight,
-    "04d": BrokenClouds,
-    "04n": BrokenCloudsNight,
-    "09d": ShowerRain,
-    "09n": ShowerRainNight,
-    "10d": Rain,
-    "10n": RainNight,
-    "11d": Thunderstorm,
-    "11n": ThunderstormNight,
-    "13d": Snow,
-    "13n": SnowNight,
-    "50d": Mist,
-    "50n": MistNight
+  const getLocalWeatherIcon = (iconCode) => {
+    return `/assets/${iconCode}.svg`;
   };
 
   useEffect(() => {
@@ -62,6 +25,8 @@ const CityCard = ({ city }) => {
           `https://api.openweathermap.org/data/2.5/weather?lat=${city.coord_lat}&lon=${city.coord_lon}&appid=${API_KEY}&units=metric`
         );
         setWeatherData(response.data);
+
+        checkIfIsNight(response.data.timezone);
       } catch (error) {
         console.error("Error fetching weather data:", error);
       } finally {
@@ -69,29 +34,36 @@ const CityCard = ({ city }) => {
       }
     };
 
+    const checkIfIsNight = (timezoneOffset) => {
+      const now = new Date();
+      const utcTimestamp = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const localTimestamp = utcTimestamp + (timezoneOffset * 1000);
+      const localTime = new Date(localTimestamp);
+      const hours = localTime.getHours();
+
+      setIsNight(hours >= 18 || hours < 6);
+    };
+
     fetchWeather();
   }, [city]);
+
+  const handleImageError = (e, iconCode) => {
+    e.target.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+  };
 
   const timezoneHours = weatherData ? weatherData.timezone / 3600 : null;
   const localTime = weatherData
     ? new Date(Date.now() + (weatherData.timezone * 1000) + (new Date().getTimezoneOffset() * 60000)).toLocaleTimeString()
     : null;
 
-  // Obter a imagem local baseada no ícone da API
-  const getLocalWeatherIcon = (iconCode) => {
-    return weatherIcons[iconCode] || Clear;
-  };
-
   return (
-    <div className="city-card">
-      {/* Display database data */}
+    <div className={`city-card ${isNight ? 'night-mode' : ''}`}>
       <h3>{city.name}, {city.country}</h3>
-      <h4><strong>Local Time:</strong> {localTime}</h4><br></br>
+      <h4><strong>Local Time:</strong> {localTime}</h4>
       <p className="smaller"><strong>Longitude:</strong> {city.coord_lon}</p>
       <p className="smaller"><strong>Latitude:</strong> {city.coord_lat}</p>
       <p className="smaller"><strong>Timezone:</strong> {city.timezone_seconds / 3600} hours</p>
 
-      {/* Section for weather data, which is loaded via API */}
       <hr className="separator" />
       <h4>Weather Information:</h4>
       {loading ? (
@@ -103,6 +75,7 @@ const CityCard = ({ city }) => {
               src={getLocalWeatherIcon(weatherData.weather[0].icon)}
               alt={weatherData.weather[0].description}
               className="weather-icon"
+              onError={(e) => handleImageError(e, weatherData.weather[0].icon)}
             />
           </div>
           <p><strong>Temperature:</strong> {weatherData.main.temp.toFixed(1)} °C</p>
