@@ -9,10 +9,6 @@
   
   /* Cores de fundo */
   --bg-light-blue: #cad6e4;
-  --bg-hover-blue: #5ea5f7;
-  --bg-table-even: #ffffff;
-  --bg-table-hover: #7bb6fa;
-  --bg-card-blue: #2185F7;
   --bg-card-hover: #5ea5f7;
   
   /* Cores de status */
@@ -20,14 +16,7 @@
   --error-red: #f44336;
   
   /* Cores de texto */
-  --text-black: #000000;
-  --text-white: #ffffff;
   --text-placeholder: #89a5c5;
-  
-  /* Cores secundárias */
-  --secondary-gray: #f1f1f1;
-  --secondary-dark-gray: #ddd;
-  --secondary-dark-green: #388e3c;
 }
 
 /* Importação de fontes */
@@ -126,7 +115,7 @@ input::placeholder {
 
 /* Componente: Botões base */
 button, .btn {
-  color: var(--text-black);
+  color: var(--primary-black);
   font-size: 1rem;
   font-weight: bold;
   border: 2px solid var(--primary-black);
@@ -218,7 +207,7 @@ hr, .separator {
   width: 100%;
   margin: 20px auto;
   border-collapse: collapse;
-  color: var(--text-black);
+  color: var(--primary-black);
   border: 2px solid var(--primary-black);
   box-shadow: 8px 8px 0px 0px var(--primary-black);
   font-weight: bold;
@@ -232,24 +221,24 @@ hr, .separator {
 
 .data-grid th {
   background-color: var(--primary-yellow);
-  color: var(--text-black);
+  color: var(--primary-black);
   height: 30px;
   font-size: 20px;
 }
 
 .data-grid tr:nth-child(even) {
-  background-color: var(--bg-table-even);
+  background-color: var(--primary-white);
 }
 
 .data-grid tr:hover {
-  background-color: var(--bg-table-hover);
+  background-color: var(--bg-card-hover);
 }
 
 /* Componente: Ícones */
 .icon-edit, .icon-delete {
   cursor: pointer;
   font-size: 18px;
-  color: var(--text-black);
+  color: var(--primary-black);
   margin: 0 5px;
 }
 
@@ -291,8 +280,8 @@ hr, .separator {
 
 /* Componente: Cartão de cidade */
 .city-card {
-  background-color: var(--bg-card-blue);
-  color: var(--text-black);
+  background-color: var(--primary-blue);
+  color: var(--primary-black);
   border: 2px solid var(--primary-black);
   box-shadow: 8px 8px 0px 0px var(--primary-black);
   padding: 24px;
@@ -312,12 +301,12 @@ hr, .separator {
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 15px;
-  color: var(--text-black);
+  color: var(--primary-black);
 }
 
 .city-card strong {
   font-weight: bold;
-  color: var(--text-black);
+  color: var(--primary-black);
 }
 
 .weather-icon {
@@ -334,7 +323,7 @@ hr, .separator {
   min-width: 300px;
   padding: 15px 20px;
   border-radius: 8px;
-  color: var(--text-white);
+  color: var(--primary-white);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 1000;
   animation: slideIn 0.3s ease-out;
@@ -366,7 +355,7 @@ hr, .separator {
 .toast-close {
   background: none;
   border: none;
-  color: var(--text-white);
+  color: var(--primary-white);
   font-size: 20px;
   cursor: pointer;
   padding: 0;
@@ -415,19 +404,6 @@ hr, .separator {
   margin-bottom: 20px;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-.back-btn {
-  padding: 10px 20px;
-  background-color: var(--secondary-gray);
-  border: 1px solid var(--secondary-dark-gray);
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.back-btn:hover {
-  background-color: var(--secondary-dark-gray);
 }
 
 /* Classes para textos menores */
