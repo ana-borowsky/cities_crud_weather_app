@@ -24,19 +24,16 @@ const CityForm = ({ city, onSuccess }) => {
   const validateForm = (formData) => {
     const newErrors = {};
 
-    // Validar nome
     if (!formData.name.trim()) {
       newErrors.name = "City name is required";
     }
 
-    // Validar país
     if (!formData.country.trim()) {
       newErrors.country = "Country is required";
     } else if (formData.country.length !== 2) {
       newErrors.country = "Country must be a 2-letter code (e.g., US, BR)";
     }
 
-    // Validar longitude
     if (formData.coord_lon === "" || formData.coord_lon === null) {
       newErrors.coord_lon = "Longitude is required";
     } else {
@@ -46,7 +43,6 @@ const CityForm = ({ city, onSuccess }) => {
       }
     }
 
-    // Validar latitude
     if (formData.coord_lat === "" || formData.coord_lat === null) {
       newErrors.coord_lat = "Latitude is required";
     } else {
@@ -56,7 +52,6 @@ const CityForm = ({ city, onSuccess }) => {
       }
     }
 
-    // Validar timezone
     if (formData.timezone_seconds === "" || formData.timezone_seconds === null) {
       newErrors.timezone_seconds = "Timezone is required";
     } else {
@@ -82,11 +77,9 @@ const CityForm = ({ city, onSuccess }) => {
       timezone_seconds: form.timezone_seconds.value,
     };
 
-    // Validar todos os campos
     const formErrors = validateForm(formData);
     setErrors(formErrors);
 
-    // Se há erros, não enviar
     if (Object.keys(formErrors).length > 0) {
       addToast("Please fix the errors in the form", "error");
       return;
@@ -183,12 +176,12 @@ const CityForm = ({ city, onSuccess }) => {
       </div>
 
       <div className="buttons">
-        <button className="blue" type="submit">
+        <button className="orange" type="submit">
           {city ? "Update City" : "Add City"}
         </button>
         <button
           type="button"
-          className="btn yellow"
+          className="btn blue"
           onClick={() => navigate('/cities')}
         >
           Back to Cities List
