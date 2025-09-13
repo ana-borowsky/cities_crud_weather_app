@@ -62,9 +62,9 @@ const HomePage = () => {
     <div className="container">
       <h1>Urban Weather</h1>
 
-      <h2>
+      <h3>
         <strong>Find the weather and time of cities around the world.</strong>
-      </h2>
+      </h3>
 
       <div className="input-container">
         <input

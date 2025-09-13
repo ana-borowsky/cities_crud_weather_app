@@ -14,7 +14,7 @@ const AddCity = () => {
   return (
     <div className="container">
       <h1>Urban Weather</h1>
-      <h2><strong>Add New City</strong></h2>
+      <h3 className="subtitle"><strong>Add New City</strong></h3>
 
       <CityForm onSuccess={handleSuccess} />
 

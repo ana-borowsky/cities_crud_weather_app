@@ -45,7 +45,7 @@ const EditCity = () => {
   return (
     <div className="container">
       <h1>Urban Weather</h1>
-      <h2><strong>Edit City: {city?.name}</strong></h2>
+      <h3 className="subtitle"><strong>Edit City: {city?.name}</strong></h3>
 
       <CityForm city={city} onSuccess={handleSuccess} />
 

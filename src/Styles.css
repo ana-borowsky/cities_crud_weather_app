@@ -61,6 +61,15 @@ h4 {
   font-family: 'Roboto', sans-serif;
 }
 
+h3 {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  font-size: 1rem;
+}
+
 p {
   font-size: 1rem;
   margin: 4px 0;
@@ -101,11 +110,11 @@ input {
   gap: 15px;
   font-weight: bold;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .input-container input {
   flex: 1;
-  margin-bottom: 0;
 }
 
 input:required::placeholder::after {
@@ -500,6 +509,7 @@ hr, .separator {
   .input-container {
     flex-direction: column;
     gap: 10px;
+    margin-top: 30px;
   }
   
   .action-buttons {

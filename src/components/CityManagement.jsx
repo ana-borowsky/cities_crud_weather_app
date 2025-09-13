@@ -1,4 +1,3 @@
-// CityManagement.jsx
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Form from "./CityForm.jsx";
@@ -30,7 +29,7 @@ const CityManagement = () => {
     <>
       <div className="container">
         <h1>Urban Weather</h1>
-        <h2><strong>Manage the cities as you wish.</strong></h2>
+        <h3 className="subtitle"><strong>Manage the cities as you wish.</strong></h3>
         <Form onEdit={onEdit} setOnEdit={setOnEdit} getCities={getCities} />
         <Grid cities={cities} setCities={setCities} setOnEdit={setOnEdit} />
         <Autor />

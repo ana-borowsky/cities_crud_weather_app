@@ -31,7 +31,7 @@ const CityList = () => {
   return (
     <div className="container">
       <h1>Urban Weather</h1>
-      <h2><strong>Manage the cities as you wish.</strong></h2>
+      <h3 className="subtitle"><strong>Manage the cities as you wish.</strong></h3>
 
       <div className="action-buttons">
         <Link to="/cities/add" className="btn orange">
