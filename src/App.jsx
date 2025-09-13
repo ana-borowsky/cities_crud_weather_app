@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastProvider } from "./context/ToastContext";
 import HomePage from "./components/Home.jsx";
-import CityList from "./components/CityList.jsx"; // Nova página
-import AddCity from "./components/AddCity.jsx";   // Nova página
-import EditCity from "./components/EditCity.jsx"; // Nova página
+import CityList from "./components/CityList.jsx";
+import AddCity from "./components/AddCity.jsx";  
+import EditCity from "./components/EditCity.jsx"; 
 import "./Styles.css";
 
 const App = () => {
