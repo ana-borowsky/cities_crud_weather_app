@@ -44,7 +44,7 @@ const HomePage = () => {
         <button onClick={handleFilterCities}>
           Search Cities
         </button>
-        <Link to="/cities" className="manage-cities-btn">
+        <Link to="/cities" className="yellow-btn">
           Manage Cities
         </Link>
       </div>
@@ -58,7 +58,7 @@ const HomePage = () => {
           <p>Cities not found or loading...</p>
         )}
       </div>
-      <h2>Made by Ana Paula Borowsky de Borba</h2>
+      <h3>Made by Ana Paula Borowsky de Borba</h3>
     </div>
     
   );

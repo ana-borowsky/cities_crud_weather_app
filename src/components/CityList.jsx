@@ -34,10 +34,10 @@ const CityList = () => {
       <h2><strong>Manage the cities as you wish.</strong></h2>
 
       <div className="action-buttons">
-        <Link to="/cities/add" className="btn btn-primary">
+        <Link to="/cities/add" className="yellow-btn orange">
           Add New City
         </Link>
-        <Link to="/" className="btn btn-secondary">
+        <Link to="/" className="yellow-btn blue">
           Back to Home
         </Link>
       </div>
@@ -48,7 +48,7 @@ const CityList = () => {
         <Grid cities={cities} setCities={setCities} getCities={getCities} />
       )}
 
-      <h2>Made by Ana Paula Borowsky de Borba</h2>
+      <h3>Made by Ana Paula Borowsky de Borba</h3>
     </div>
   );
 };

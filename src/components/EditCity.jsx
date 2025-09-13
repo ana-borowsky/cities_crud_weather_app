@@ -57,7 +57,7 @@ const EditCity = () => {
         Back to Cities List
       </button>
 
-      <h2>Made by Ana Paula Borowsky de Borba</h2>
+      <h3>Made by Ana Paula Borowsky de Borba</h3>
     </div>
   );
 };

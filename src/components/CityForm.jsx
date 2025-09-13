@@ -1,10 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Importe useNavigate
 import { useToast } from "../context/ToastContext";
 import "./Form.css";
 
 const CityForm = ({ city, onSuccess }) => {
   const ref = useRef();
+  const navigate = useNavigate(); // Adicione esta linha
   const { addToast } = useToast();
 
   useEffect(() => {
@@ -70,6 +72,13 @@ const CityForm = ({ city, onSuccess }) => {
       <div className="buttons">
         <button type="submit">
           {city ? "Update City" : "Add City"}
+        </button>
+        <button
+          type="button" 
+          className="yellow-btn blue"
+          onClick={() => navigate('/cities')}
+        >
+          Back to Cities List
         </button>
       </div>
     </form>
