@@ -1,28 +1,31 @@
 import React from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { FaTrash, FaEdit } from "react-icons/fa";
 import { useToast } from "../context/ToastContext";
 import "./Grid.css";
 
-const Grid = ({ cities, setCities, setOnEdit }) => {
+const Grid = ({ cities, setCities, getCities }) => {
+  const navigate = useNavigate();
   const { addToast } = useToast();
 
   const handleDelete = async (id, cityName) => {
-    try {
-      await axios.delete(`http://localhost:8800/cities/${id}`);
-      const newArray = cities.filter((city) => city.id !== id);
-      setCities(newArray);
-      addToast(`City "${cityName}" deleted successfully!`, "success");
-    } catch (error) {
-      console.error("Error deleting city:", error);
-      addToast("Error deleting city. Please try again.", "error");
+    if (window.confirm(`Are you sure you want to delete "${cityName}"?`)) {
+      try {
+        await axios.delete(`http://localhost:8800/${id}`);
+        const newArray = cities.filter((city) => city.id !== id);
+        setCities(newArray);
+        addToast(`City "${cityName}" deleted successfully!`, "success");
+        getCities(); 
+      } catch (error) {
+        console.error("Error deleting city:", error);
+        addToast("Error deleting city. Please try again.", "error");
+      }
     }
-
-    setOnEdit(null);
   };
 
   const handleEdit = (item) => {
-    setOnEdit(item);
+    navigate(`/cities/edit/${item.id}`);
   };
 
   return (
@@ -35,8 +38,7 @@ const Grid = ({ cities, setCities, setOnEdit }) => {
             <th>Longitude</th>
             <th>Latitude</th>
             <th>Timezone (seconds)</th>
-            <th></th>
-            <th></th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -48,18 +50,18 @@ const Grid = ({ cities, setCities, setOnEdit }) => {
               <td>{item.coord_lat}</td>
               <td>{item.timezone_seconds}</td>
               <td>
-                <FaEdit
-                  onClick={() => handleEdit(item)}
-                  className="icon-edit"
-                  title="Edit city"
-                />
-              </td>
-              <td>
-                <FaTrash
-                  onClick={() => handleDelete(item.id, item.name)}
-                  className="icon-delete"
-                  title="Delete city"
-                />
+                <div className="action-buttons">
+                  <FaEdit
+                    onClick={() => handleEdit(item)}
+                    className="icon-edit"
+                    title="Edit city"
+                  />
+                  <FaTrash
+                    onClick={() => handleDelete(item.id, item.name)}
+                    className="icon-delete"
+                    title="Delete city"
+                  />
+                </div>
               </td>
             </tr>
           ))}

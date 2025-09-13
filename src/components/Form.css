@@ -14,11 +14,6 @@
   width: 675px;
 }
 
-.form-container input::placeholder {
-  color: #000;
-}
-
-
 .buttons {
   display: flex;
   justify-content: space-between;
@@ -30,4 +25,53 @@
 
 .back-btn {
   background-color: #2185F7;
+}
+
+/* Adicione ao Form.css ou crie um novo arquivo */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #388e3c;
+}
+
+.btn-secondary {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #ddd;
+}
+
+.back-btn {
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-btn:hover {
+  background-color: #ddd;
 }
