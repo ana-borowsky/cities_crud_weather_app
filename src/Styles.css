@@ -108,10 +108,6 @@ input {
   margin-bottom: 0;
 }
 
-input::placeholder {
-  font-style: italic;
-}
-
 input:required::placeholder::after {
   content: " *";
   color: var(--error-red);
@@ -123,7 +119,7 @@ button, .btn {
   font-size: 0.9rem;
   font-weight: bold;
   border: 1px solid var(--primary-black);
-  box-shadow: 6px 6px 0px 0px var(--primary-black);
+  box-shadow: 4px 4px 0px 0px var(--primary-black);
   padding: 11px 24px;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
@@ -213,10 +209,11 @@ hr, .separator {
 .data-grid {
   width: 95%;
   margin-top: 30px;
+  margin-bottom: 6px;
   border-collapse: collapse;
   color: var(--primary-black);
   border: 1px solid var(--primary-black);
-  box-shadow: 8px 8px 0px 0px var(--primary-black);
+  box-shadow: 6px 6px 0px 0px var(--primary-black);
   font-weight: bold;
 }
 
@@ -308,7 +305,7 @@ hr, .separator {
   background-color: var(--primary-blue);
   color: var(--primary-black);
   border: 1px solid var(--primary-black);
-  box-shadow: 8px 8px 0px 0px var(--primary-black);
+  box-shadow: 6px 6px 0px 0px var(--primary-black);
   padding: 24px;
   transition: all 0.1s ease-in-out;
   text-align: left;
@@ -386,7 +383,7 @@ hr, .separator {
   font-size: 1rem;
   font-weight: bold;
   border: 1px solid var(--primary-black);
-  box-shadow: 6px 6px 0px 0px var(--primary-black);
+  box-shadow: 4px 4px 0px 0px var(--primary-black);
 }
 
 .toast-success {
