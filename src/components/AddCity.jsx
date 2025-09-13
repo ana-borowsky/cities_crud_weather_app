@@ -1,8 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import CityForm from "./CityForm.jsx";
-import "../App.css";
-import "../components/Form.css";
+import "../Styles.css";
 
 const AddCity = () => {
   const navigate = useNavigate();

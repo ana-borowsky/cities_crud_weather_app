@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Importe useNavigate
 import { useToast } from "../context/ToastContext";
-import "./Form.css";
+import "../Styles.css";
 
 const CityForm = ({ city, onSuccess }) => {
   const ref = useRef();
@@ -70,12 +70,12 @@ const CityForm = ({ city, onSuccess }) => {
       <input name="timezone_seconds" type="number" placeholder="Timezone (seconds)" />
 
       <div className="buttons">
-        <button type="submit">
+        <button className="orange" type="submit">
           {city ? "Update City" : "Add City"}
         </button>
         <button
           type="button" 
-          className="yellow-btn blue"
+          className="btn blue"
           onClick={() => navigate('/cities')}
         >
           Back to Cities List

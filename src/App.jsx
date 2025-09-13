@@ -5,7 +5,7 @@ import HomePage from "./components/Home.jsx";
 import CityList from "./components/CityList.jsx"; // Nova página
 import AddCity from "./components/AddCity.jsx";   // Nova página
 import EditCity from "./components/EditCity.jsx"; // Nova página
-import "./App.css";
+import "./Styles.css";
 
 const App = () => {
   return (

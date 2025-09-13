@@ -3,8 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import CityForm from "./CityForm.jsx";
 import { useToast } from "../context/ToastContext";
-import "../App.css";
-import "../components/Form.css";
+import "../Styles.css";
 
 const EditCity = () => {
   const [city, setCity] = useState(null);

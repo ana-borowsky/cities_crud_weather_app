@@ -3,8 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Grid from "./Grid.jsx";
 import { useToast } from "../context/ToastContext";
-import "../App.css";
-import "../components/Grid.css";
+import "../Styles.css";
 
 const CityList = () => {
   const [cities, setCities] = useState([]);
@@ -34,10 +33,10 @@ const CityList = () => {
       <h2><strong>Manage the cities as you wish.</strong></h2>
 
       <div className="action-buttons">
-        <Link to="/cities/add" className="yellow-btn orange">
+        <Link to="/cities/add" className="btn orange">
           Add New City
         </Link>
-        <Link to="/" className="yellow-btn blue">
+        <Link to="/" className="btn blue">
           Back to Home
         </Link>
       </div>

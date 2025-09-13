@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import CityCard from "./CityCard.jsx";
-import './Home.css';
+import '../Styles.css';
 
 const HomePage = () => {
   const [allCities, setAllCities] = useState([]);
@@ -42,10 +42,10 @@ const HomePage = () => {
           onChange={(e) => setCityInput(e.target.value)}
           placeholder="Ex: Paris, New York, Tokyo"
         />
-        <button onClick={handleFilterCities}>
+        <button className="orange" onClick={handleFilterCities}>
           Search Cities
         </button>
-        <Link to="/cities" className="yellow-btn">
+        <Link to="/cities" className="btn yellow">
           Manage Cities
         </Link>
       </div>

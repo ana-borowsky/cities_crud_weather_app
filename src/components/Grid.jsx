@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FaTrash, FaEdit } from "react-icons/fa";
 import { useToast } from "../context/ToastContext";
-import "./Grid.css";
+import "../Styles.css";
 
 const Grid = ({ cities, setCities, getCities }) => {
   const navigate = useNavigate();

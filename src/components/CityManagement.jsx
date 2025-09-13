@@ -4,9 +4,7 @@ import axios from "axios";
 import Form from "./CityForm.jsx";
 import Grid from "./Grid.jsx";
 import { useToast } from "../context/ToastContext";
-import "../App.css";
-import "../components/Form.css";
-import "../components/Grid.css";
+import "../Styles.css";
 
 const CityManagement = () => {
   const [cities, setCities] = useState([]);
