@@ -1,17 +1,21 @@
 import React from "react";
 import axios from "axios";
 import { FaTrash, FaEdit } from "react-icons/fa";
+import { useToast } from "../context/ToastContext";
 import "./Grid.css";
 
 const Grid = ({ cities, setCities, setOnEdit }) => {
-  const handleDelete = async (id) => {
+  const { addToast } = useToast();
+
+  const handleDelete = async (id, cityName) => {
     try {
-      await axios.delete(`http://localhost:8800/${id}`);
+      await axios.delete(`http://localhost:8800/cities/${id}`);
       const newArray = cities.filter((city) => city.id !== id);
       setCities(newArray);
-      console.log("City deleted successfully!");
+      addToast(`City "${cityName}" deleted successfully!`, "success");
     } catch (error) {
       console.error("Error deleting city:", error);
+      addToast("Error deleting city. Please try again.", "error");
     }
 
     setOnEdit(null);
@@ -44,10 +48,18 @@ const Grid = ({ cities, setCities, setOnEdit }) => {
               <td>{item.coord_lat}</td>
               <td>{item.timezone_seconds}</td>
               <td>
-                <FaEdit onClick={() => handleEdit(item)} className="icon-edit" />
+                <FaEdit
+                  onClick={() => handleEdit(item)}
+                  className="icon-edit"
+                  title="Edit city"
+                />
               </td>
               <td>
-                <FaTrash onClick={() => handleDelete(item.id)} className="icon-delete" />
+                <FaTrash
+                  onClick={() => handleDelete(item.id, item.name)}
+                  className="icon-delete"
+                  title="Delete city"
+                />
               </td>
             </tr>
           ))}
