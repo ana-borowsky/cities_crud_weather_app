@@ -363,6 +363,14 @@ hr, .separator {
   margin: 10px 0;
 }
 
+.sad-sun{
+  height: 120px;
+  margin: 10px 0;
+}
+
+
+
+
 /* Componente: Toast notifications */
 .toast {
   position: fixed;
