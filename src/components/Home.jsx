@@ -31,11 +31,17 @@ const HomePage = () => {
     setDisplayedCities(filtered);
   };
 
+  const showAllCities = () => {
+    setDisplayedCities(allCities);
+    setCityInput('');
+  };
+
   return (
     <div className="container">
-        <h1>Urban Wheather</h1>
-        
+      <h1>Urban Weather</h1>
+
       <h2><strong>Find the weather and time of cities around the world.</strong></h2>
+
       <div className="input-container">
         <input
           type="text"
@@ -46,6 +52,11 @@ const HomePage = () => {
         <button className="orange" onClick={handleFilterCities}>
           Search Cities
         </button>
+
+        <button className="blue" onClick={showAllCities}>
+          Show All Cities
+        </button>
+
         <Link to="/cities" className="btn yellow">
           Manage Cities
         </Link>
@@ -60,9 +71,9 @@ const HomePage = () => {
           <p>Cities not found or loading...</p>
         )}
       </div>
+
       <Autor />
     </div>
-    
   );
 };
 
