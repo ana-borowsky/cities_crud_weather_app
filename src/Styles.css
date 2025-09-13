@@ -110,7 +110,6 @@ input {
   gap: 15px;
   font-weight: bold;
   margin-bottom: 30px;
-  margin-top: 30px;
 }
 
 .input-container input {
@@ -142,7 +141,7 @@ button, .btn {
 }
 
 button:hover, .btn:hover {
-  box-shadow: 4px 4px 0px 0px var(--primary-black);
+  box-shadow: 2px 2px 0px 0px var(--primary-black);
   transform: translate(1px, 1px);
 }
 
