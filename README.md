@@ -1,7 +1,17 @@
 
 # Urban Weather
 
-Este projeto é uma aplicação web simples que permite que os usuários vejam informações detalhadas sobre o clima e o horário de diversas cidades ao redor do mundo, além de oferecer uma interface para adicionar, editar e excluir cidades do banco de dados. Este foi um trabalho simples feito para a disciplina de Experiência Criativa, que também aproveitou-se a chance para trabalhar com um estilo de design bem exagerado, conhecido como neobrutalismo.
+Este projeto é uma aplicação web simples que permite que os usuários vejam informações detalhadas sobre o clima e o horário de diversas cidades ao redor do mundo, além de oferecer uma interface para adicionar, editar e excluir cidades do banco de dados. Este foi um trabalho simples feito para a disciplina de Experiência Criativa, que também aproveitou-se a chance para trabalhar com um estilo de design bem exagerado, conhecido como brutalismo.
+
+<img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/5ef1369d-1346-4c23-a8a7-66d26bb99d7a" /><br>
+
+<img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/ead8843b-65be-430d-abbc-f3f143fe2c75" /><br>
+
+<img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/ce9c6dd8-5c8d-45bd-a6c5-b6e95416b30c" /><br>
+
+<img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/905f0f86-55c6-4848-8ca2-8ed17d3119ae" /><vr>
+
+
 
 ## Funcionalidades
 
