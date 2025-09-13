@@ -34,7 +34,7 @@ const CityManagement = () => {
         <h2><strong>Manage the cities as you wish.</strong></h2>
         <Form onEdit={onEdit} setOnEdit={setOnEdit} getCities={getCities} />
         <Grid cities={cities} setCities={setCities} setOnEdit={setOnEdit} />
-        <h3>Made by Ana Paula Borowsky de Borba</h3>
+        <h4>Made by Ana Paula Borowsky de Borba</h4>
       </div>
     </>
   );

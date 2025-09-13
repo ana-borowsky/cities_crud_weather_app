@@ -48,8 +48,8 @@ const EditCity = () => {
       <h2><strong>Edit City: {city?.name}</strong></h2>
 
       <CityForm city={city} onSuccess={handleSuccess} />
-      
-      <h3>Made by Ana Paula Borowsky de Borba</h3>
+
+      <h4>Made by Ana Paula Borowsky de Borba</h4>
     </div>
   );
 };

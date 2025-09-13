@@ -13,12 +13,18 @@
 
 .toast-success {
   background-color: #4caf50;
-  border-left: 4px solid #388e3c;
+  box-shadow: 6px 6px 0px 0px #000;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #000;
 }
 
 .toast-error {
   background-color: #f44336;
-  border-left: 4px solid #d32f2f;
+  box-shadow: 6px 6px 0px 0px #000;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #000;
 }
 
 .toast-content {
