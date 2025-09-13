@@ -12,7 +12,7 @@ const Grid = ({ cities, setCities, getCities }) => {
   const handleDelete = async (id, cityName) => {
     if (window.confirm(`Are you sure you want to delete "${cityName}"?`)) {
       try {
-        await axios.delete(`http://localhost:8800/${id}`);
+        await axios.delete(`http://localhost:8800/cities/${id}`);
         const newArray = cities.filter((city) => city.id !== id);
         setCities(newArray);
         addToast(`City "${cityName}" deleted successfully!`, "success");

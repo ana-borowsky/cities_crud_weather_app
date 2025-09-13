@@ -48,15 +48,7 @@ const EditCity = () => {
       <h2><strong>Edit City: {city?.name}</strong></h2>
 
       <CityForm city={city} onSuccess={handleSuccess} />
-
-      <button
-        className="back-btn"
-        onClick={() => navigate('/cities')}
-        style={{ marginTop: '20px' }}
-      >
-        Back to Cities List
-      </button>
-
+      
       <h3>Made by Ana Paula Borowsky de Borba</h3>
     </div>
   );

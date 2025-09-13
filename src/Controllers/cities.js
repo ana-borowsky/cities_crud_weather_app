@@ -9,6 +9,20 @@ export const getCities = (_, res) => {
   });
 };
 
+export const getCity = (req, res) => {
+  const q = "SELECT * FROM cities WHERE `id` = ?";
+
+  db.query(q, [req.params.id], (err, data) => {
+    if (err) return res.json(err);
+
+    if (data.length === 0) {
+      return res.status(404).json("City not found.");
+    }
+
+    return res.status(200).json(data[0]);
+  });
+};
+
 export const addCity = (req, res) => {
   const q = "INSERT INTO cities (`name`, `country`, `coord_lon`, `coord_lat`, `timezone_seconds`) VALUES (?)";
 
