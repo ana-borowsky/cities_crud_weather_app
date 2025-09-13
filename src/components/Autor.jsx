@@ -4,7 +4,14 @@ import "../Styles.css";
 const Autor = () => {
   return (
     <div className="autor">
-      <h4>Made by Ana Paula Borowsky de Borba</h4>
+      <a 
+        href="https://github.com/ana-borowsky"
+        className="btn white"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Made by Ana Paula Borowsky de Borba
+      </a>
     </div>
   );
 };
