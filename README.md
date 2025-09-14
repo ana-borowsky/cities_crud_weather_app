@@ -1,17 +1,21 @@
 
 # Urban Weather
 
-Este projeto é uma aplicação web simples que permite que os usuários vejam informações detalhadas sobre o clima e o horário de diversas cidades ao redor do mundo, além de oferecer uma interface para adicionar, editar e excluir cidades do banco de dados. Este foi um trabalho feito para a disciplina de Experiência Criativa, e, por isso, aproveitei a chance para testar um tipo de design bem diferente, conhecido por brutalismo.
+Este projeto é uma aplicação web simples que permite que o usuário veja informações detalhadas sobre o clima e o horário de diversas cidades ao redor do mundo, além de oferecer uma interface para adicionar, editar e excluir cidades do banco de dados. Também aproveitou-se para testar o design conhecido como brutalista, com cores fortes e traços marcantes, como desafio extra. Este foi um trabalho feito para a disciplina de Experiência Criativa.
 
 ## Como funciona
 
-Na Home, o usuário pode escolher que cidades gostaria de visualizar os dados ao digitar o nome delas separados por vírgulas e então clicar em buscar. Ao acessar a Home, o usuário se depara inicialmente com seis cidades pré-selecionadas. Existe um botão que permite mostrar os dados de todas as cidades cadastradas.
+Na Home, o usuário depara-se inicialmente com seis cards de cidade, que são pré-iniciados para a tela não ficar vazia. Ele pode escolher as cidades que gostaria de visualizar os dados ao digitar o nome delas separados por vírgulas e então clicar em buscar. Essa busca ficará salva no local storage, de forma que toda vez que o usuário voltar para a home, estas serão as cidades que serão exibidas para ele. Existe também um botão que permite mostrar os dados de todas as cidades cadastradas.
 
-Quando o usuário clica na busca, o sistema busca a cidade no banco de dados, e, pelo nome dela e do país, faz a requisição via API para o site OpenWeather para a obtenção da última informação climática do local. A API também fornece os dados de fuso-horário, o que permite mostrar também o horário local da cidade. Para fins de visualização, os cards das cidades mudam de cor dependendo se for dia ou noite.
+Quando o usuário clica na busca, o sistema busca a cidade no banco de dados, e, pelo nome dela e do país, faz a requisição via API para o site OpenWeather para obter a última informação climática disponível do local. Nos cards de cidades da home, a parte acima da linha é puxada diretamente do banco de dados, enquanto que a parte debaixo vem da API. Para fins de visualização, os cards das cidades mudam de cor dependendo se for dia ou noite no local.
+
+Todas as páginas possuem botões para navegação, para voltar para outras páginas e etc. Porém, o usuário também poderá sempre clicar no título para voltar para a home.
+
+No final de todas as telas há um botão com o nome da autora, qque era requisito do trabalho. Este botão envia o usuário para a página do github da autora.
 
 <img width="1835" height="958" alt="Image" src="https://github.com/user-attachments/assets/0891ce6b-95cb-4943-8c09-dda3dd644c0e" /><br>
 
-Caso a cidade não exista no banco de dados, uma mensagem dizendo que ela não foi encontrada irá aparecer.
+Caso a cidade não exista no banco de dados, uma mensagem dizendo que ela não foi encontrada irá ser exibida na tela.
 
 <img width="1835" height="958" alt="Image" src="https://github.com/user-attachments/assets/472a301a-907c-49ad-a66b-36adfd4e3619" /><br>
 
@@ -19,17 +23,13 @@ Caso a cidade exista no banco de dados, mas a API não tenha os dados disponíve
 
 <img width="1835" height="958" alt="Image" src="https://github.com/user-attachments/assets/ebeb42af-8efd-4079-b0c0-66c7867b38a8" /><br>
 
-Caso a cidade que o usuário queira saber os dados não esteja disponível na busca, ele poderá adicioná-la no banco de dados, clicando no botão de gerenciar as cidades. Na página de gerenciamento, é possível ver a lista completa, adicionar, deletar ou editar as cidades.
+Caso a cidade que o usuário queira saber os dados não esteja disponível na busca, ele poderá adicioná-la no banco de dados, clicando no botão de gerenciar as cidades. Na página de gerenciamento, é possível ver a lista completa de cidades presentes no banco de dados, e, caso queira, também poderá adicionar novas ou editar e deletar as existentes.
 
 <img width="1835" height="958" alt="Image" src="https://github.com/user-attachments/assets/5e60eb5c-5304-4118-9abd-0128342ebd2e" /><br>
 
 <img width="1835" height="958" alt="Image" src="https://github.com/user-attachments/assets/bff397e7-047e-463a-acaf-9c831ea2cff5" /><br>
 
-Depois de incluída no banco de dados, o usuário pode novamente ir na Home para buscar por ela, e então ver os dados, caso a API disponha desta informação. Como a API é em inglês, toda a aplicação foi feita nesta língua, pois achei que seria estranho pedir pro usuário escrever o nome da cidade em inglês sendo a aplicação em português.
-
-Todas as páginas possuem botões para navegação, para voltar para outras páginas e etc. Porém, o usuário também poderá sempre clicar no título para voltar para a Home. A última busca de cidades feita pelo usuário é salva no local storage, e sempre que ele voltar para a Home, são estas as cidades que serão mostradas.
-
-No final de todas as telas há um botão com o meu nome, que foi requisitado pelo professor que estivesse presente. Este botão envia o usuário para a página a minha página do github.
+Depois de incluída no banco de dados, o usuário pode novamente ir na home para buscar por ela, e então ver os dados, caso a API disponha desta informação. Como a API é em inglês, toda a aplicação foi feita nesta língua, pois não seria muito intuitivo para o usuário que a aplicação fosse em português, mas ele tivesse que escrever os nomes em inglês.
 
 ## Funcionalidades
 
