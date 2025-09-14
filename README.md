@@ -33,8 +33,8 @@ Depois de incluída no banco de dados, o usuário pode novamente ir na home para
 
 ## Funcionalidades
 
-*   **Gerenciamento Completo (CRUD):** A página de gerenciamento permite que você adicione novas cidades, edite dados de cidades existentes e as remova do banco de dados.
-*   **Dados em Tempo Real:** As informações de clima (temperatura, umidade, vento) e hora local são obtidas através da API OpenWeatherMap.
+*   **Gerenciamento Completo (CRUD):** A página de gerenciamento permite o usuário adicione novas cidades, edite dados de cidades existentes e as remova do banco de dados.
+*   **Dados em Tempo Real:** As informações de clima (temperatura, umidade, vento) são obtidas através da API OpenWeatherMap.
 *   **Banco de Dados MySQL:** Todas as informações de cidades são armazenadas de forma persistente em um banco de dados MySQL.
 
 ## Tecnologias Utilizadas
@@ -44,7 +44,7 @@ Depois de incluída no banco de dados, o usuário pode novamente ir na home para
 *   **React:** Biblioteca para a construção da interface de usuário.
 *   **Axios:** Cliente HTTP para fazer requisições à API e ao backend.
 *   **React Router:** Para gerenciar a navegação entre as páginas.
-*   **CSS:** Para estilização, com um design inspirado no estilo neobrutalista.
+*   **CSS:** Para estilização, com um design inspirado no estilo brutalista.
 
 ### Backend:
 
@@ -54,11 +54,9 @@ Depois de incluída no banco de dados, o usuário pode novamente ir na home para
 
 ### API Externa:
 
-*   **OpenWeatherMap:** API para buscar dados meteorológicos e de fuso horário.
+*   **OpenWeatherMap:** API para buscar dados meteorológicos.
 
 ## Como Executar o Projeto
-
-Siga os passos abaixo para colocar o projeto a funcionar na sua máquina:
 
 ### Pré-requisitos
 
