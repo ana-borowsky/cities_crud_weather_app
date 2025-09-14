@@ -7,7 +7,7 @@ Este projeto é uma aplicação web simples que permite que o usuário veja info
 
 Na Home, o usuário depara-se inicialmente com seis cards de cidade, que são pré-iniciados para a tela não ficar vazia. Ele pode escolher as cidades que gostaria de visualizar os dados ao digitar o nome delas separados por vírgulas e então clicar em buscar. Essa busca ficará salva no local storage, de forma que toda vez que o usuário voltar para a home, estas serão as cidades que serão exibidas para ele. Existe também um botão que permite mostrar os dados de todas as cidades cadastradas.
 
-Quando o usuário clica na busca, o sistema busca a cidade no banco de dados, e, pelo nome dela e do país, faz a requisição via API para o site OpenWeather para obter a última informação climática disponível do local. Nos cards de cidades da home, a parte acima da linha é puxada diretamente do banco de dados, enquanto que a parte debaixo vem da API. Para fins de visualização, os cards das cidades mudam de cor dependendo se for dia ou noite no local.
+Quando o usuário clica na busca, o sistema busca a cidade no banco de dados, e, pelo nome dela e do país, faz a requisição via API para o site [OpenWeatherMap](https://openweathermap.org) para obter a última informação climática disponível do local. Nos cards de cidades da home, a parte acima da linha é puxada diretamente do banco de dados, enquanto que a parte debaixo vem da API. Para fins de visualização, os cards das cidades mudam de cor dependendo se for dia ou noite no local.
 
 Todas as páginas possuem botões para navegação, para voltar para outras páginas e etc. Porém, o usuário também poderá sempre clicar no título para voltar para a home.
 
