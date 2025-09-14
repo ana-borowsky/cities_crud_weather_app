@@ -51,17 +51,12 @@ body {
 .retro-title {
   font-size: 3rem;
   text-align: center;
-  margin-bottom: 1rem;
-  position: relative;
-  font-weight: bold;
-  font-family: "Orbitron", sans-serif; /* fonte futurista opcional */
 }
 
 .retro-title {
   font-family: 'Notable', sans-serif;
-  font-size: 80px;
+  font-size: 5.1rem;
   letter-spacing: 10px;
-  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -70,15 +65,6 @@ body {
   text-decoration: none;
   display: inline-block;
   position: relative;
-  transition: transform 0.25s ease-in-out;
-}
-
-.retro-title a:hover {
-  transform: translateY(-10px);
-  text-shadow: 
-    0px 6px 0 var(--primary-blue), 
-    0px 12px 0 var(--primary-orange),
-    0px 18px 0 var(--primary-white);
 }
 
 h2 {
