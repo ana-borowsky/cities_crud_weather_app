@@ -3,16 +3,17 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import CityCard from "./CityCard.jsx";
 import Autor from "./Autor";
-import Toast from "./Toast";
 import Title from "./Title";
+import { useToast } from "../context/ToastContext";
 import "../Styles.css";
 
 const HomePage = () => {
   const [allCities, setAllCities] = useState([]);
   const [displayedCities, setDisplayedCities] = useState([]);
   const [cityInput, setCityInput] = useState("");
-  const [toast, setToast] = useState(null);
   const [recentSearches, setRecentSearches] = useState([]);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const { addToast } = useToast();
 
   useEffect(() => {
     const savedSearches = localStorage.getItem("recentCitySearches");
@@ -33,43 +34,48 @@ const HomePage = () => {
   }, [recentSearches]);
 
   useEffect(() => {
-    if (cityInput) {
-      localStorage.setItem("lastCitySearch", cityInput);
-    }
-  }, [cityInput]);
-
-  useEffect(() => {
     const fetchAllCities = async () => {
       try {
         const response = await axios.get("http://localhost:8800/cities");
         setAllCities(response.data);
 
-        const searchQuery = cityInput || localStorage.getItem("lastCitySearch") || "Curitiba, London, Tokyo, New York, Belém, São Paulo";
-        const cityNames = searchQuery.split(",").map((name) => name.trim());
+        if (isInitialLoad) {
+          const lastSearch = localStorage.getItem("lastCitySearch");
+          if (lastSearch) {
+            const cityNames = lastSearch.split(",").map((name) => name.trim());
+            const filtered = response.data.filter((city) =>
+              cityNames.includes(city.name)
+            );
+            setDisplayedCities(filtered);
 
-        const filtered = response.data.filter((city) =>
-          cityNames.includes(city.name)
-        );
-        setDisplayedCities(filtered);
-
-        if (filtered.length === 0 && cityNames.length > 0) {
-          setToast({
-            message: `No cities found for: "${searchQuery}"`,
-            type: "error",
-          });
+            if (filtered.length === 0 && cityNames.length > 0) {
+              addToast(`No cities found for: "${lastSearch}"`, "error");
+            }
+          } else {
+            setDisplayedCities(response.data);
+          }
+          setIsInitialLoad(false);
         }
       } catch (error) {
         console.error("Error fetching cities:", error);
-        setToast({ message: "Error loading cities.", type: "error" });
+        addToast("Error loading cities.", "error");
       }
     };
+
     fetchAllCities();
-  }, []);
+  }, [addToast, isInitialLoad]);
 
   const handleFilterCities = () => {
+    if (!cityInput.trim()) {
+      addToast("Please enter at least one city name to search", "error");
+      return;
+    }
+
     const cityNames = cityInput.split(",").map((name) => name.trim());
     const filtered = allCities.filter((city) => cityNames.includes(city.name));
     setDisplayedCities(filtered);
+
+    localStorage.setItem("lastCitySearch", cityInput);
 
     if (cityInput.trim()) {
       const newSearch = {
@@ -85,25 +91,17 @@ const HomePage = () => {
     }
 
     if (filtered.length === 0) {
-      setToast({
-        message: `No cities found for: "${cityInput}"`,
-        type: "error",
-      });
+      addToast(`No cities found for: "${cityInput}"`, "error");
     } else {
-      setToast({
-        message: `Found ${filtered.length} cities for your search`,
-        type: "success",
-      });
+      addToast(`Found ${filtered.length} cities for your search`, "success");
     }
   };
 
   const showAllCities = () => {
     setDisplayedCities(allCities);
     setCityInput("");
-    setToast({
-      message: "Showing all available cities",
-      type: "success",
-    });
+    localStorage.removeItem("lastCitySearch");
+    addToast("Showing all available cities", "success");
   };
 
   const loadRecentSearch = (searchQuery) => {
@@ -112,19 +110,25 @@ const HomePage = () => {
     const filtered = allCities.filter((city) => cityNames.includes(city.name));
     setDisplayedCities(filtered);
 
-    setToast({
-      message: `Loaded recent search: "${searchQuery}"`,
-      type: "info",
-    });
+    localStorage.setItem("lastCitySearch", searchQuery);
+
+    addToast(`Loaded recent search: "${searchQuery}"`, "info");
   };
 
   const clearRecentSearches = () => {
     setRecentSearches([]);
     localStorage.removeItem("recentCitySearches");
-    setToast({
-      message: "Recent searches cleared",
-      type: "success",
-    });
+    addToast("Recent searches cleared", "success");
+  };
+
+  const handleInputChange = (e) => {
+    setCityInput(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleFilterCities();
+    }
   };
 
   return (
@@ -139,9 +143,9 @@ const HomePage = () => {
         <input
           type="text"
           value={cityInput}
-          onChange={(e) => setCityInput(e.target.value)}
+          onChange={handleInputChange}
+          onKeyPress={handleKeyPress}
           placeholder="Ex: Paris, New York, Tokyo"
-          onKeyPress={(e) => e.key === 'Enter' && handleFilterCities()}
         />
         <button className="orange" onClick={handleFilterCities}>
           Search Cities
@@ -162,7 +166,7 @@ const HomePage = () => {
             <CityCard key={city.id} city={city} />
           ))}
         </div>
-      ) : (
+      ) : !isInitialLoad ? (
         <div className="sad-sun-container">
           <img
             src="/assets/sad_sun.svg"
@@ -175,16 +179,7 @@ const HomePage = () => {
             </strong>
           </p>
         </div>
-      )}
-
-      {toast && (
-        <Toast
-          message={toast.message}
-          type={toast.type}
-          onClose={() => setToast(null)}
-          duration={4000}
-        />
-      )}
+      ) : null}
 
       <Autor />
     </div>
