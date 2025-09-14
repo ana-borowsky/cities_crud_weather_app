@@ -15,13 +15,19 @@ Caso a cidade não exista no banco de dados, uma mensagem dizendo que ela não f
 
 <img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/905f0f86-55c6-4848-8ca2-8ed17d3119ae" /><br>
 
+Caso a cidade exista no banco de dados, mas a API não tenha os dados disponíveis para ela, uma mensagem com essa informação será exibida para o usuário.
+
+<img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/2524f575-b321-4170-a661-16d6c0938e58" /><br>
+
 Caso a cidade que o usuário queira saber os dados não esteja disponível na busca, ele poderá adicioná-la no banco de dados, clicando no botão de gerenciar as cidades. Na página de gerenciamento, é possível ver a lista completa, adicionar, deletar ou editar as cidades.
 
 <img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/ead8843b-65be-430d-abbc-f3f143fe2c75" /><br>
 
 <img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/ce9c6dd8-5c8d-45bd-a6c5-b6e95416b30c" /><br>
 
-Depois de incluída no banco de dados, o usuário pode novamente ir na Home para buscar por ela, e então ver os dados, caso a API disponha desta informação. Caso ela não disponha, aparecerá uma mensagem dizendo que os dados de clima não estão disponĩveis para essa cidade. Como a API é em inglês, toda a aplicação foi feita nesta língua, pois achei que seria estranho pedir pro usuário escrever o nome da cidade em inglês sendo a aplicação em português.
+Depois de incluída no banco de dados, o usuário pode novamente ir na Home para buscar por ela, e então ver os dados, caso a API disponha desta informação. Como a API é em inglês, toda a aplicação foi feita nesta língua, pois achei que seria estranho pedir pro usuário escrever o nome da cidade em inglês sendo a aplicação em português.
+
+Todas as páginas possuem botões para navegação, para voltar para outras páginas e etc. Porém, o usuário também poderá sempre clicar no título para voltar para a Home. A última busca de cidades feita pelo usuário é salva no local storage, e sempre que ele voltar para a Home, são estas as cidades que serão mostradas.
 
 No final de todas as telas há um botão com o meu nome, que foi requisitado pelo professor que estivesse presente. Este botão envia o usuário para a página a minha página do github.
 
