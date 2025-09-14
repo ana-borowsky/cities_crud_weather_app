@@ -72,30 +72,35 @@ Siga os passos abaixo para colocar o projeto a funcionar na sua máquina:
 
     ```bash
     git clone git@github.com:ana-borowsky/cities_crud_weather_app.git
-    cd git@github.com:ana-borowsky/cities_crud_weather_app.git
     ```
-
+    
 2.  **Instale as dependências:**
 
-
-
-    No diretório raiz do projeto, instale as dependências do backend:
+    Entre no diretório raiz do projeto e instale as dependências do backend:
 
     ```bash
     npm install
     ```
-
-4.  **Configure o banco de dados:**
-
-    *   Importe o arquivo `database.sql` para criar e preencher o banco de dados com algumas cidades.
-
-5.  **Inicie o Backend:**
+    
+3.  **Inicie o Backend:**
 
     A partir do diretório raiz, inicie o servidor:
 
     ```bash
     npm start
     ```
+
+4.  **Inicie o Frontend:**
+
+    A partir do diretório raiz, inicie o servidor:
+
+    ```bash
+    npm run dev
+    ```
+
+5.  **Configure o banco de dados:**
+
+    *   Importe o arquivo `database.sql` localizado no diretório raiz para criar e preencher o banco de dados com algumas cidades.
 
 
 A aplicação estará acessível em `http://localhost:5173`
