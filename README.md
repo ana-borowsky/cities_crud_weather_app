@@ -1,7 +1,7 @@
 
 # Urban Weather
 
-Este projeto é uma aplicação web simples que permite que os usuários vejam informações detalhadas sobre o clima e o horário de diversas cidades ao redor do mundo, além de oferecer uma interface para adicionar, editar e excluir cidades do banco de dados. Este foi um trabalho simples feito para a disciplina de Experiência Criativa, e, por isso, aproveitei a chance para testar um tipo de design bem diferente, conhecido por brutalismo.
+Este projeto é uma aplicação web simples que permite que os usuários vejam informações detalhadas sobre o clima e o horário de diversas cidades ao redor do mundo, além de oferecer uma interface para adicionar, editar e excluir cidades do banco de dados. Este foi um trabalho feito para a disciplina de Experiência Criativa, e, por isso, aproveitei a chance para testar um tipo de design bem diferente, conhecido por brutalismo.
 
 ## Como funciona
 
@@ -21,7 +21,7 @@ Caso a cidade exista no banco de dados, mas a API não tenha os dados disponíve
 
 Caso a cidade que o usuário queira saber os dados não esteja disponível na busca, ele poderá adicioná-la no banco de dados, clicando no botão de gerenciar as cidades. Na página de gerenciamento, é possível ver a lista completa, adicionar, deletar ou editar as cidades.
 
-<img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/ead8843b-65be-430d-abbc-f3f143fe2c75" /><br>
+<img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/88a22372-d2d1-4653-9f35-011df5048d3a" /><br>
 
 <img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/ce9c6dd8-5c8d-45bd-a6c5-b6e95416b30c" /><br>
 
@@ -33,11 +33,9 @@ No final de todas as telas há um botão com o meu nome, que foi requisitado pel
 
 ## Funcionalidades
 
-*   **Página Inicial Dinâmica:** Exibe cards de cidades em destaque com informações de clima e hora local. O usuário pode filtrar as cidades exibidas por nome.
 *   **Gerenciamento Completo (CRUD):** A página de gerenciamento permite que você adicione novas cidades, edite dados de cidades existentes e as remova do banco de dados.
 *   **Dados em Tempo Real:** As informações de clima (temperatura, umidade, vento) e hora local são obtidas através da API OpenWeatherMap.
 *   **Banco de Dados MySQL:** Todas as informações de cidades são armazenadas de forma persistente em um banco de dados MySQL.
-*   **Interface Responsiva:** O design se adapta a diferentes tamanhos de tela, proporcionando uma boa experiência em dispositivos móveis e desktops.
 
 ## Tecnologias Utilizadas
 
