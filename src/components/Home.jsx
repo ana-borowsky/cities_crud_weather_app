@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import CityCard from "./CityCard.jsx";
 import Autor from "./Autor";
 import Toast from "./Toast";
+import Title from "./Title";
 import "../Styles.css";
 
 const HomePage = () => {
@@ -60,7 +61,7 @@ const HomePage = () => {
 
   return (
     <div className="container">
-      <h1>Urban Weather</h1>
+      <Title />
 
       <h3>
         <strong>Find the weather and time of cities around the world.</strong>

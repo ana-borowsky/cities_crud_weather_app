@@ -36,7 +36,7 @@ const CityCard = ({ city }) => {
           error.response.data &&
           error.response.data.cod === "404"
         ) {
-          setApiError("No weather data available for this location.");
+          setApiError("No weather data found for this location. Please check the city or country name and try again.");
         } else if (
           error.response &&
           error.response.data &&

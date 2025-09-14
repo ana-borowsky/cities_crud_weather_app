@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import CityForm from "./CityForm.jsx";
 import Autor from "./Autor";
+import Title from "./Title.jsx"; // importando o componente Title
 import { useToast } from "../context/ToastContext";
 import "../Styles.css";
 
@@ -31,7 +32,7 @@ const EditCity = () => {
   }, [id, navigate, addToast]);
 
   const handleSuccess = () => {
-    navigate("/cities"); 
+    navigate("/cities");
   };
 
   if (loading) {
@@ -44,7 +45,7 @@ const EditCity = () => {
 
   return (
     <div className="container">
-      <h1>Urban Weather</h1>
+      <Title />
       <h3 className="subtitle"><strong>Edit City: {city?.name}</strong></h3>
 
       <CityForm city={city} onSuccess={handleSuccess} />
