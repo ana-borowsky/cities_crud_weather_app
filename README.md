@@ -21,7 +21,7 @@ Caso a cidade que o usuário queira saber os dados não esteja disponível na bu
 
 <img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/ce9c6dd8-5c8d-45bd-a6c5-b6e95416b30c" /><br>
 
-Depois de incluída no banco de dados, o usuário pode novamente ir na Home para buscar por ela, e então ver os dados, caso a API disponha desta informação. Caso ela não disponha, aparecerá uma mensagem dizendo que os dados de clima não estão disponĩveis para essa cidade.
+Depois de incluída no banco de dados, o usuário pode novamente ir na Home para buscar por ela, e então ver os dados, caso a API disponha desta informação. Caso ela não disponha, aparecerá uma mensagem dizendo que os dados de clima não estão disponĩveis para essa cidade. Como a API é em inglês, toda a aplicação foi feita nesta língua, pois achei que seria estranho pedir pro usuário escrever o nome da cidade em inglês sendo a aplicação em português.
 
 No final de todas as telas há um botão com o meu nome, que foi requisitado pelo professor que estivesse presente. Este botão envia o usuário para a página a minha página do github.
 
