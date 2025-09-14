@@ -18,7 +18,6 @@ export const ToastProvider = ({ children }) => {
     const id = Date.now();
     setToasts((prevToasts) => [...prevToasts, { id, message, type }]);
 
-    // Retorna função para remover toast manualmente se necessário
     return () => removeToast(id);
   };
 

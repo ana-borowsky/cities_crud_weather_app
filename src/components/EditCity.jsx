@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import CityForm from "./CityForm.jsx";
 import Autor from "./Autor";
-import Title from "./Title.jsx"; // importando o componente Title
+import Title from "./Title.jsx";
 import { useToast } from "../context/ToastContext";
 import "../Styles.css";
 
