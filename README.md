@@ -9,21 +9,21 @@ Na Home, o usuário pode escolher que cidades gostaria de visualizar os dados ao
 
 Quando o usuário clica na busca, o sistema busca a cidade no banco de dados, e, pelo nome dela e do país, faz a requisição via API para o site OpenWeather para a obtenção da última informação climática do local. A API também fornece os dados de fuso-horário, o que permite mostrar também o horário local da cidade. Para fins de visualização, os cards das cidades mudam de cor dependendo se for dia ou noite.
 
-<img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/5ef1369d-1346-4c23-a8a7-66d26bb99d7a" /><br>
+<img width="1835" height="958" alt="Image" src="https://github.com/user-attachments/assets/0891ce6b-95cb-4943-8c09-dda3dd644c0e" /><br>
 
 Caso a cidade não exista no banco de dados, uma mensagem dizendo que ela não foi encontrada irá aparecer.
 
-<img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/905f0f86-55c6-4848-8ca2-8ed17d3119ae" /><br>
+<img width="1835" height="958" alt="Image" src="https://github.com/user-attachments/assets/472a301a-907c-49ad-a66b-36adfd4e3619" /><br>
 
 Caso a cidade exista no banco de dados, mas a API não tenha os dados disponíveis para ela, uma mensagem com essa informação será exibida para o usuário.
 
-<img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/2524f575-b321-4170-a661-16d6c0938e58" /><br>
+<img width="1835" height="958" alt="Image" src="https://github.com/user-attachments/assets/ebeb42af-8efd-4079-b0c0-66c7867b38a8" /><br>
 
 Caso a cidade que o usuário queira saber os dados não esteja disponível na busca, ele poderá adicioná-la no banco de dados, clicando no botão de gerenciar as cidades. Na página de gerenciamento, é possível ver a lista completa, adicionar, deletar ou editar as cidades.
 
-<img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/88a22372-d2d1-4653-9f35-011df5048d3a" /><br>
+<img width="1835" height="958" alt="Image" src="https://github.com/user-attachments/assets/5e60eb5c-5304-4118-9abd-0128342ebd2e" /><br>
 
-<img width="1834" height="954" alt="Image" src="https://github.com/user-attachments/assets/ce9c6dd8-5c8d-45bd-a6c5-b6e95416b30c" /><br>
+<img width="1835" height="958" alt="Image" src="https://github.com/user-attachments/assets/bff397e7-047e-463a-acaf-9c831ea2cff5" /><br>
 
 Depois de incluída no banco de dados, o usuário pode novamente ir na Home para buscar por ela, e então ver os dados, caso a API disponha desta informação. Como a API é em inglês, toda a aplicação foi feita nesta língua, pois achei que seria estranho pedir pro usuário escrever o nome da cidade em inglês sendo a aplicação em português.
 
