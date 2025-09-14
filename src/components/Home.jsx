@@ -86,7 +86,7 @@ const HomePage = () => {
 
       setRecentSearches(prev => {
         const updated = [newSearch, ...prev.filter(item => item.query !== cityInput)];
-        return updated.slice(0, 5);
+        return updated.slice(0, 30);
       });
     }
 
