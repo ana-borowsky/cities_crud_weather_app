@@ -11,7 +11,7 @@ Quando o usuário clica na busca, o sistema busca a cidade no banco de dados, e,
 
 Todas as páginas possuem botões para navegação, para voltar para outras páginas e etc. Porém, o usuário também poderá sempre clicar no título para voltar para a home.
 
-No final de todas as telas há um botão com o nome da autora, qque era requisito do trabalho. Este botão envia o usuário para a página do github da autora.
+No final de todas as telas há um botão com o nome da autora, que era requisito do trabalho. Este botão envia o usuário para a página do github da autora.
 
 <img width="1835" height="958" alt="Image" src="https://github.com/user-attachments/assets/0891ce6b-95cb-4943-8c09-dda3dd644c0e" /><br>
 
