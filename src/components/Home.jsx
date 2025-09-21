@@ -140,24 +140,27 @@ const HomePage = () => {
       </h3>
 
       <div className="input-container">
-        <input
-          type="text"
-          value={cityInput}
-          onChange={handleInputChange}
-          onKeyPress={handleKeyPress}
-          placeholder="Ex: Paris, New York, Tokyo"
-        />
-        <button className="orange" onClick={handleFilterCities}>
-          Search Cities
-        </button>
+        <div className = "searchbar">
+            <input
+              type="text"
+              value={cityInput}
+              onChange={handleInputChange}
+              onKeyPress={handleKeyPress}
+              placeholder="Ex: Paris, New York, Tokyo"
+            />
+            <button className="orange" onClick={handleFilterCities}>
+              Search Cities
+            </button>
+        </div>
+        <div className="home-btns">
+            <button className="blue" onClick={showAllCities}>
+              Show All Cities
+            </button>
 
-        <button className="blue" onClick={showAllCities}>
-          Show All Cities
-        </button>
-
-        <Link to="/cities" className="btn yellow">
-          Manage Cities
-        </Link>
+            <Link to="/cities" className="btn yellow">
+              Manage Cities
+            </Link>
+        </div>
       </div>
 
       {displayedCities.length > 0 ? (

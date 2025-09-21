@@ -17,10 +17,10 @@
   --success-green: #4caf50;
   --error-red: #f44336;
 
-   display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Importação de fontes */
@@ -116,7 +116,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 15px;
+  gap: 28px;
   font-weight: bold;
   margin-bottom: 30px;
 }
@@ -193,7 +193,7 @@ hr, .separator {
 .city-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 28px;
   justify-content: center;
   width: 100%;
 }
@@ -517,7 +517,7 @@ hr, .separator {
   
   .input-container {
     flex-direction: column;
-    gap: 10px;
+    gap: 28px;
     margin-top: 30px;
   }
   
@@ -558,5 +558,15 @@ hr, .separator {
   }
 }
 
+.searchbar {
+  width: 669px;
+  display: flex;
+  gap: 28px;
+}
+
+.home-btns {
+  display: flex;
+  gap: 28px;
+}
 
 
