@@ -1,7 +1,6 @@
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import { useToast } from "../context/ToastContext"
-import "../Styles.css"
 import CitiesTable from "../components/CitiesTable"
 
 const Grid = ({ cities, setCities, getCities }) => {
@@ -28,11 +27,11 @@ const Grid = ({ cities, setCities, getCities }) => {
   };
 
   return (
-    <CitiesTable 
-      handleEdit={handleEdit} 
+    <CitiesTable
+      handleEdit={handleEdit}
       handleDelete={handleDelete}
       cities={cities}
-      />
+    />
   )
 }
 

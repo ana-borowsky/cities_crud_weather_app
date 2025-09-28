@@ -1,23 +1,21 @@
-import "../Styles.css";
-
 const CityCard = ({ city, children }) => {
 
-  const localTime = 
+  const localTime =
     new Date(
       Date.now() +
       city.timezone_seconds * 1000 +
       new Date().getTimezoneOffset() * 60000
     ).toLocaleTimeString()
 
-    const checkIfIsNight = () => {
-      const now = new Date();
-      const utcTimestamp = now.getTime() + now.getTimezoneOffset() * 60000;
-      const localTimestamp = utcTimestamp + city.timezone_seconds * 1000;
-      const localTime = new Date(localTimestamp);
-      const hours = localTime.getHours();
-  
-      return hours >= 18 || hours < 6
-    };
+  const checkIfIsNight = () => {
+    const now = new Date();
+    const utcTimestamp = now.getTime() + now.getTimezoneOffset() * 60000;
+    const localTimestamp = utcTimestamp + city.timezone_seconds * 1000;
+    const localTime = new Date(localTimestamp);
+    const hours = localTime.getHours();
+
+    return hours >= 18 || hours < 6
+  };
 
   return (
     <div className={`city-card ${checkIfIsNight() ? "night-mode" : ""}`}>
@@ -41,7 +39,7 @@ const CityCard = ({ city, children }) => {
       <h4>Weather Information:</h4>
 
       {children}
-      
+
     </div>
   );
 };

@@ -1,8 +1,6 @@
-import React from "react";
 import Author from "./Author";
 import Title from "./Title";
 import { Link } from "react-router-dom";
-import "../Styles.css";
 
 const Layout = ({ subtitle, children }) => {
   return (

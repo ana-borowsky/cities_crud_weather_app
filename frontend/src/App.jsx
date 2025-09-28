@@ -5,7 +5,6 @@ import HomePage from "./pages/Home.jsx";
 import CityList from "./pages/CityList.jsx";
 import AddCity from "./pages/AddCity.jsx";
 import EditCity from "./pages/EditCity.jsx";
-import "./Styles.css";
 
 const App = () => {
   return (

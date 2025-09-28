@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
-import "../Styles.css"
 import CityCardComponent from "../components/CityCard"
 import ApiError from "../components/ApiError"
 import WeatherInformation from "../components/WeatherInformation"

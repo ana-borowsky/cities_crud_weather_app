@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import CitiesTable from "../containers/CitiesTable.jsx";
 import { useToast } from "../context/ToastContext.jsx";
-import "../Styles.css";
 import Layout from "../components/Layout.jsx"
 
 const CityList = () => {

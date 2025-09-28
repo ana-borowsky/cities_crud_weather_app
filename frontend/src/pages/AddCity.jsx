@@ -1,7 +1,5 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import CityForm from "../containers/CityForm.jsx";
-import "../Styles.css";
 import Layout from "../components/Layout.jsx";
 
 const AddCity = () => {

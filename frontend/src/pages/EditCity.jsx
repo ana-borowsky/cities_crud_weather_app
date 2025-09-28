@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import CityForm from "../containers/CityForm.jsx";
 import { useToast } from "../context/ToastContext.jsx";
-import "../Styles.css";
 import Layout from "../components/Layout.jsx";
 
 const EditCity = () => {
@@ -46,7 +45,7 @@ const EditCity = () => {
     <Layout subtitle={`Edit City: ${city?.name}`}>
 
       <CityForm city={city} onSuccess={handleSuccess} />
-      
+
     </Layout>
   );
 };
