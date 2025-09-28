@@ -58,7 +58,15 @@ const CityCard = ({ city }) => {
     ) : apiError ? (
         <ApiError errorMessage={apiError} />
     ) : weatherData ? (
-        <WeatherInformation weatherData={weatherData} />
+          <WeatherInformation 
+            description={weatherData.weather[0].description}
+            temperature={weatherData.main.temp.toFixed(1)}
+            feelsLike={weatherData.main.feels_like.toFixed(1)}
+            humidity={weatherData.main.humidity}
+            windspeed={weatherData.wind.speed}
+            pressure={weatherData.main.pressure}
+            icon={weatherData.weather[0].icon}
+            />
     ) : (
       <p>Weather data not available.</p>
     )}

@@ -1,4 +1,4 @@
-const WeatherInformation = ({ weatherData }) => {
+const WeatherInformation = ({ feelsLike, pressure, windspeed, humidity, temperature, description, icon }) => {
 
   const getLocalWeatherIcon = (iconCode) => {
     return `/assets/${iconCode}.svg`;
@@ -8,30 +8,29 @@ const WeatherInformation = ({ weatherData }) => {
     <div>
       <div className="image">
         <img
-          src={getLocalWeatherIcon(weatherData.weather[0].icon)}
-          alt={weatherData.weather[0].description}
+          src={getLocalWeatherIcon(icon)}
+          alt={description}
           className="weather-icon"
-          onError={(e) => handleImageError(e, weatherData.weather[0].icon)}
+          onError={(e) => handleImageError(e, icon)}
         />
       </div>
       <p>
-        <strong>Temperature:</strong> {weatherData.main.temp.toFixed(1)} °C
+        <strong>Temperature:</strong> {temperature} °C
       </p>
       <p>
-        <strong>Feels Like:</strong>{" "}
-        {weatherData.main.feels_like.toFixed(1)} °C
+        <strong>Feels Like:</strong> {feelsLike} °C
       </p>
       <p>
-        <strong>Condition:</strong> {weatherData.weather[0].description}
+        <strong>Condition:</strong> {description}
       </p>
       <p>
-        <strong>Humidity:</strong> {weatherData.main.humidity} %
+        <strong>Humidity:</strong> {humidity} %
       </p>
       <p>
-        <strong>Wind:</strong> {weatherData.wind.speed} m/s
+        <strong>Wind:</strong> {windspeed} m/s
       </p>
       <p>
-        <strong>Pressure:</strong> {weatherData.main.pressure} hPa
+        <strong>Pressure:</strong> {pressure} hPa
       </p>
     </div>
   );
