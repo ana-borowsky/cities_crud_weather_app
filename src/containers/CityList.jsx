@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Grid from "./Grid.jsx";
-import Autor from "./Autor";
-import Title from "./Title.jsx";
 import { useToast } from "../context/ToastContext";
 import "../Styles.css";
 
@@ -30,8 +28,7 @@ const CityList = () => {
   }, []);
 
   return (
-    <div className="container">
-      <Title />
+    <Layout >
       <h3 className="subtitle"><strong>Manage the cities as you wish.</strong></h3>
 
       <div className="action-buttons">
@@ -49,8 +46,7 @@ const CityList = () => {
         <Grid cities={cities} setCities={setCities} getCities={getCities} />
       )}
 
-      <Autor />
-    </div>
+    </Layout >
   );
 };
 

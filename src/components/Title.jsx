@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../Styles.css";
 
-const Title = () => {
+const Title = ({ children }) => {
   return (
     <h1 className="retro-title">
-      <Link to="/">Urban Weather</Link>
+      {children}
     </h1>
   );
 };

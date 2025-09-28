@@ -1,8 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import CityForm from "./CityForm.jsx";
-import Autor from "./Autor";
-import Title from "./Title.jsx"; 
 import "../Styles.css";
 
 const AddCity = () => {
@@ -13,14 +11,11 @@ const AddCity = () => {
   };
 
   return (
-    <div className="container">
-      <Title />
+    <Layout>
       <h3 className="subtitle"><strong>Add New City</strong></h3>
 
       <CityForm onSuccess={handleSuccess} />
-
-      <Autor />
-    </div>
+    </Layout>
   );
 };
 

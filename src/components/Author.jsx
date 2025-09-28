@@ -1,10 +1,10 @@
 import React from "react";
 import "../Styles.css";
 
-const Autor = () => {
+const Author = () => {
   return (
     <div className="autor">
-      <a 
+      <a
         href="https://github.com/ana-borowsky"
         className="btn white"
         target="_blank"
@@ -16,4 +16,4 @@ const Autor = () => {
   );
 };
 
-export default Autor;
+export default Author;

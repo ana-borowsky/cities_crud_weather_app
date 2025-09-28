@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import CityCard from "./CityCard.jsx";
-import Autor from "./Autor";
-import Title from "./Title";
-import { useToast } from "../context/ToastContext";
+import { useToast } from "../context/ToastContext.jsx";
 import "../Styles.css";
+import Layout from "../components/Layout"
 
 const HomePage = () => {
   const [allCities, setAllCities] = useState([]);
@@ -132,34 +131,32 @@ const HomePage = () => {
   };
 
   return (
-    <div className="container">
-      <Title />
-
+    <Layout>
       <h3>
         <strong>Find the weather and time of cities around the world.</strong>
       </h3>
 
       <div className="input-container">
-        <div className = "searchbar">
-            <input
-              type="text"
-              value={cityInput}
-              onChange={handleInputChange}
-              onKeyPress={handleKeyPress}
-              placeholder="Ex: Paris, New York, Tokyo"
-            />
-            <button className="orange" onClick={handleFilterCities}>
-              Search Cities
-            </button>
+        <div className="searchbar">
+          <input
+            type="text"
+            value={cityInput}
+            onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
+            placeholder="Ex: Paris, New York, Tokyo"
+          />
+          <button className="orange" onClick={handleFilterCities}>
+            Search Cities
+          </button>
         </div>
         <div className="home-btns">
-            <button className="blue" onClick={showAllCities}>
-              Show All Cities
-            </button>
+          <button className="blue" onClick={showAllCities}>
+            Show All Cities
+          </button>
 
-            <Link to="/cities" className="btn yellow">
-              Manage Cities
-            </Link>
+          <Link to="/cities" className="btn yellow">
+            Manage Cities
+          </Link>
         </div>
       </div>
 
@@ -183,9 +180,7 @@ const HomePage = () => {
           </p>
         </div>
       ) : null}
-
-      <Autor />
-    </div>
+    </Layout >
   );
 };
 

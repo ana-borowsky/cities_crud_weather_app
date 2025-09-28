@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import CityForm from "./CityForm.jsx";
-import Autor from "./Autor";
-import Title from "./Title.jsx";
 import { useToast } from "../context/ToastContext";
 import "../Styles.css";
+import Layout from "../components/Layout.jsx";
 
 const EditCity = () => {
   const [city, setCity] = useState(null);
@@ -44,14 +43,11 @@ const EditCity = () => {
   }
 
   return (
-    <div className="container">
-      <Title />
+    <Layout>
       <h3 className="subtitle"><strong>Edit City: {city?.name}</strong></h3>
 
       <CityForm city={city} onSuccess={handleSuccess} />
-
-      <Autor />
-    </div>
+    </Layout>
   );
 };
 
