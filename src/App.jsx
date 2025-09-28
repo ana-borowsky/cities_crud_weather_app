@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastProvider } from "./context/ToastContext";
-import HomePage from "./containers/Home.jsx";
-import CityList from "./containers/CityList.jsx";
-import AddCity from "./containers/AddCity.jsx";
-import EditCity from "./containers/EditCity.jsx";
+import HomePage from "./pages/Home.jsx";
+import CityList from "./pages/CityList.jsx";
+import AddCity from "./pages/AddCity.jsx";
+import EditCity from "./pages/EditCity.jsx";
 import "./Styles.css";
 
 const App = () => {

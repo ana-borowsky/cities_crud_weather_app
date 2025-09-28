@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import CityCard from "./CityCard.jsx";
+import CityCard from "../containers/CityCard.jsx";
 import { useToast } from "../context/ToastContext.jsx";
 import "../Styles.css";
-import Layout from "../components/Layout"
+import Layout from "../components/Layout.jsx"
 
 const HomePage = () => {
   const [allCities, setAllCities] = useState([]);

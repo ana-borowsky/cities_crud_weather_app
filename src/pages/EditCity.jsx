@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import CityForm from "./CityForm.jsx";
-import { useToast } from "../context/ToastContext";
+import CityForm from "../containers/CityForm.jsx";
+import { useToast } from "../context/ToastContext.jsx";
 import "../Styles.css";
 import Layout from "../components/Layout.jsx";
 
