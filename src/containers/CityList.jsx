@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Grid from "./Grid.jsx";
+import Grid from "./CitiesTable.jsx";
 import { useToast } from "../context/ToastContext";
 import "../Styles.css";
+import Layout from "../components/Layout"
 
 const CityList = () => {
   const [cities, setCities] = useState([]);

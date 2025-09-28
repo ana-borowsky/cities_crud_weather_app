@@ -1,33 +1,6 @@
-import React from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { FaTrash, FaEdit } from "react-icons/fa";
-import { useToast } from "../context/ToastContext";
-import "../Styles.css";
+import { FaTrash, FaEdit } from "react-icons/fa"
 
-const Grid = ({ cities, setCities, getCities }) => {
-  const navigate = useNavigate();
-  const { addToast } = useToast();
-
-  const handleDelete = async (id, cityName) => {
-    if (window.confirm(`Are you sure you want to delete "${cityName}"?`)) {
-      try {
-        await axios.delete(`http://localhost:8800/cities/${id}`);
-        const newArray = cities.filter((city) => city.id !== id);
-        setCities(newArray);
-        addToast(`City "${cityName}" deleted successfully!`, "success");
-        getCities(); 
-      } catch (error) {
-        console.error("Error deleting city:", error);
-        addToast("Error deleting city. Please try again.", "error");
-      }
-    }
-  };
-
-  const handleEdit = (item) => {
-    navigate(`/cities/edit/${item.id}`);
-  };
-
+const CitiesTable = ({ cities, handleDelete, handleEdit }) => {
   return (
     <div className="table-container">
       <table className="data-grid">
@@ -71,4 +44,6 @@ const Grid = ({ cities, setCities, getCities }) => {
   );
 };
 
-export default Grid;
+export default CitiesTable;
+
+

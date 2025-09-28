@@ -11,7 +11,6 @@ const CityCard = ({ city }) => {
 
   const API_KEY = "b7ffc9f8c3a6364da5b4124625785d0e"
 
-
   useEffect(() => {
     const fetchWeather = async () => {
       try {

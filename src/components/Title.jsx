@@ -1,5 +1,4 @@
-import React from "react";
-import "../Styles.css";
+import "../Styles.css"
 
 const Title = ({ children }) => {
   return (
