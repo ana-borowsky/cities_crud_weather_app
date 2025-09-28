@@ -1,41 +1,26 @@
-import { useState, useEffect } from "react";
 import "../Styles.css";
 
-const CityCard = ({ city, weatherData, children }) => {
-  const [isNight, setIsNight] = useState(false);
+const CityCard = ({ city, children }) => {
 
-  const getLocalWeatherIcon = (iconCode) => {
-    return `/assets/${iconCode}.svg`;
-  };
-
-  useEffect(() => {
-    const checkIfIsNight = (timezoneOffset) => {
-      const now = new Date();
-      const utcTimestamp = now.getTime() + now.getTimezoneOffset() * 60000;
-      const localTimestamp = utcTimestamp + timezoneOffset * 1000;
-      const localTime = new Date(localTimestamp);
-      const hours = localTime.getHours();
-
-      setIsNight(hours >= 18 || hours < 6);
-    };
-
-    //checkIfIsNight(weatherData.timezone);
-  }, []);
-
-  const handleImageError = (e, iconCode) => {
-    e.target.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-  };
-
-  const localTime = weatherData
-    ? new Date(
+  const localTime = 
+    new Date(
       Date.now() +
-      weatherData.timezone * 1000 +
+      city.timezone_seconds * 1000 +
       new Date().getTimezoneOffset() * 60000
     ).toLocaleTimeString()
-    : null;
+
+    const checkIfIsNight = () => {
+      const now = new Date();
+      const utcTimestamp = now.getTime() + now.getTimezoneOffset() * 60000;
+      const localTimestamp = utcTimestamp + city.timezone_seconds * 1000;
+      const localTime = new Date(localTimestamp);
+      const hours = localTime.getHours();
+  
+      return hours >= 18 || hours < 6
+    };
 
   return (
-    <div className={`city-card ${isNight ? "night-mode" : ""}`}>
+    <div className={`city-card ${checkIfIsNight() ? "night-mode" : ""}`}>
       <h3>
         {city.name}, {city.country}
       </h3>

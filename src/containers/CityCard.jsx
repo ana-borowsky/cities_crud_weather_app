@@ -4,6 +4,7 @@ import "../Styles.css"
 import CityCardComponent from "../components/CityCard"
 import ApiError from "../components/ApiError"
 import WeatherInformation from "../components/WeatherInformation"
+
 const CityCard = ({ city }) => {
   const [weatherData, setWeatherData] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -55,17 +56,17 @@ const CityCard = ({ city }) => {
     {loading ? (
       <p>Loading weather data...</p>
     ) : apiError ? (
-        <ApiError errorMessage={apiError} />
+      <ApiError errorMessage={apiError} />
     ) : weatherData ? (
-          <WeatherInformation 
-            description={weatherData.weather[0].description}
-            temperature={weatherData.main.temp.toFixed(1)}
-            feelsLike={weatherData.main.feels_like.toFixed(1)}
-            humidity={weatherData.main.humidity}
-            windspeed={weatherData.wind.speed}
-            pressure={weatherData.main.pressure}
-            icon={weatherData.weather[0].icon}
-            />
+      <WeatherInformation
+        description={weatherData.weather[0].description}
+        temperature={weatherData.main.temp.toFixed(1)}
+        feelsLike={weatherData.main.feels_like.toFixed(1)}
+        humidity={weatherData.main.humidity}
+        windspeed={weatherData.wind.speed}
+        pressure={weatherData.main.pressure}
+        icon={weatherData.weather[0].icon}
+      />
     ) : (
       <p>Weather data not available.</p>
     )}

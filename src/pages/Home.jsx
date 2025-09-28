@@ -131,10 +131,7 @@ const HomePage = () => {
   };
 
   return (
-    <Layout>
-      <h3>
-        <strong>Find the weather and time of cities around the world.</strong>
-      </h3>
+    <Layout subtitle={"Find the weather and time of cities around the world."}>
 
       <div className="input-container">
         <div className="searchbar">

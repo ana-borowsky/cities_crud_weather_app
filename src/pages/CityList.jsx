@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Grid from "../containers/CitiesTable.jsx";
+import CitiesTable from "../containers/CitiesTable.jsx";
 import { useToast } from "../context/ToastContext.jsx";
 import "../Styles.css";
 import Layout from "../components/Layout.jsx"
@@ -29,9 +29,7 @@ const CityList = () => {
   }, []);
 
   return (
-    <Layout >
-      <h3 className="subtitle"><strong>Manage the cities as you wish.</strong></h3>
-
+    <Layout subtitle="Manage the cities as you wish">
       <div className="action-buttons">
         <Link to="/cities/add" className="btn orange">
           Add New City
@@ -44,11 +42,11 @@ const CityList = () => {
       {loading ? (
         <p>Loading cities...</p>
       ) : (
-        <Grid cities={cities} setCities={setCities} getCities={getCities} />
+        <CitiesTable cities={cities} setCities={setCities} getCities={getCities} />
       )}
 
     </Layout >
   );
 };
 
-export default CityList;
+export default CityList

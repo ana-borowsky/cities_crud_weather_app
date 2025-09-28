@@ -43,10 +43,10 @@ const EditCity = () => {
   }
 
   return (
-    <Layout>
-      <h3 className="subtitle"><strong>Edit City: {city?.name}</strong></h3>
+    <Layout subtitle={`Edit City: ${city?.name}`}>
 
       <CityForm city={city} onSuccess={handleSuccess} />
+      
     </Layout>
   );
 };
