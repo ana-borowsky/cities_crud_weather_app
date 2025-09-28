@@ -43,9 +43,7 @@ const EditCity = () => {
 
   return (
     <Layout subtitle={`Edit City: ${city?.name}`}>
-
       <CityForm city={city} onSuccess={handleSuccess} />
-
     </Layout>
   );
 };

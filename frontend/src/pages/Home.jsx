@@ -1,35 +1,25 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import CityCard from "../containers/CityCard.jsx";
 import { useToast } from "../context/ToastContext.jsx";
 import Layout from "../components/Layout.jsx"
+import SearchBar from "../components/SearchBar.jsx"
+import { Link } from "react-router-dom";
+import NoCitiesFound from "../components/NoCitiesFound.jsx";
 
 const HomePage = () => {
   const [allCities, setAllCities] = useState([]);
   const [displayedCities, setDisplayedCities] = useState([]);
-  const [cityInput, setCityInput] = useState("");
-  const [recentSearches, setRecentSearches] = useState([]);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const [lastCitySearch, setLastCitySearch] = useState("");
   const { addToast } = useToast();
 
-  useEffect(() => {
-    const savedSearches = localStorage.getItem("recentCitySearches");
-    if (savedSearches) {
-      setRecentSearches(JSON.parse(savedSearches));
-    }
-
-    const lastSearch = localStorage.getItem("lastCitySearch");
-    if (lastSearch) {
-      setCityInput(lastSearch);
-    } else {
-      setCityInput("Curitiba, London, Tokyo, New York, Belém, São Paulo");
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("recentCitySearches", JSON.stringify(recentSearches));
-  }, [recentSearches]);
+  const showAllCities = () => {
+    setDisplayedCities(allCities);
+    localStorage.removeItem("lastCitySearch");
+    setLastCitySearch("");
+    addToast("Showing all available cities", "success");
+  };
 
   useEffect(() => {
     const fetchAllCities = async () => {
@@ -49,6 +39,7 @@ const HomePage = () => {
             if (filtered.length === 0 && cityNames.length > 0) {
               addToast(`No cities found for: "${lastSearch}"`, "error");
             }
+            setLastCitySearch(lastSearch);
           } else {
             setDisplayedCities(response.data);
           }
@@ -61,9 +52,9 @@ const HomePage = () => {
     };
 
     fetchAllCities();
-  }, [addToast, isInitialLoad]);
+  }, []);
 
-  const handleFilterCities = () => {
+  const handleFilterCities = (cityInput) => {
     if (!cityInput.trim()) {
       addToast("Please enter at least one city name to search", "error");
       return;
@@ -75,19 +66,6 @@ const HomePage = () => {
 
     localStorage.setItem("lastCitySearch", cityInput);
 
-    if (cityInput.trim()) {
-      const newSearch = {
-        query: cityInput,
-        timestamp: new Date().toISOString(),
-        resultsCount: filtered.length
-      };
-
-      setRecentSearches(prev => {
-        const updated = [newSearch, ...prev.filter(item => item.query !== cityInput)];
-        return updated.slice(0, 30);
-      });
-    }
-
     if (filtered.length === 0) {
       addToast(`No cities found for: "${cityInput}"`, "error");
     } else {
@@ -95,56 +73,10 @@ const HomePage = () => {
     }
   };
 
-  const showAllCities = () => {
-    setDisplayedCities(allCities);
-    setCityInput("");
-    localStorage.removeItem("lastCitySearch");
-    addToast("Showing all available cities", "success");
-  };
-
-  const loadRecentSearch = (searchQuery) => {
-    setCityInput(searchQuery);
-    const cityNames = searchQuery.split(",").map((name) => name.trim());
-    const filtered = allCities.filter((city) => cityNames.includes(city.name));
-    setDisplayedCities(filtered);
-
-    localStorage.setItem("lastCitySearch", searchQuery);
-
-    addToast(`Loaded recent search: "${searchQuery}"`, "info");
-  };
-
-  const clearRecentSearches = () => {
-    setRecentSearches([]);
-    localStorage.removeItem("recentCitySearches");
-    addToast("Recent searches cleared", "success");
-  };
-
-  const handleInputChange = (e) => {
-    setCityInput(e.target.value);
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      handleFilterCities();
-    }
-  };
-
   return (
     <Layout subtitle={"Find the weather and time of cities around the world."}>
-
       <div className="input-container">
-        <div className="searchbar">
-          <input
-            type="text"
-            value={cityInput}
-            onChange={handleInputChange}
-            onKeyPress={handleKeyPress}
-            placeholder="Ex: Paris, New York, Tokyo"
-          />
-          <button className="orange" onClick={handleFilterCities}>
-            Search Cities
-          </button>
-        </div>
+        <SearchBar initialValue={lastCitySearch} handleFilterCities={handleFilterCities} />
         <div className="home-btns">
           <button className="blue" onClick={showAllCities}>
             Show All Cities
@@ -163,18 +95,7 @@ const HomePage = () => {
           ))}
         </div>
       ) : !isInitialLoad ? (
-        <div className="sad-sun-container">
-          <img
-            src="/assets/sad_sun.svg"
-            alt="Sad sun - no cities found"
-            className="sad-sun-icon"
-          />
-          <p className="smaller">
-            <strong>
-              Try searching for another city or add it to the database.
-            </strong>
-          </p>
-        </div>
+        <NoCitiesFound />
       ) : null}
     </Layout >
   );

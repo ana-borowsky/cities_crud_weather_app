@@ -11,7 +11,6 @@ const AddCity = () => {
 
   return (
     <Layout subtitle={"Add new city"}>
-
       <CityForm onSuccess={handleSuccess} />
     </Layout>
   );
