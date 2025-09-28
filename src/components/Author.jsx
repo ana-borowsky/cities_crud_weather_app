@@ -1,6 +1,3 @@
-import React from "react";
-import "../Styles.css";
-
 const Author = () => {
   return (
     <div className="autor">
