@@ -1,0 +1,62 @@
+/* Componente: Inputs */
+input {
+  border-radius: 15px;
+  border: 1px solid var(--primary-black);
+  height: 55px;
+  padding-left: 20px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  width: 100%;
+}
+
+/* Componente: Input container */
+.input-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.input-container input {
+  flex: 1;
+}
+
+input:required::placeholder::after {
+  content: " *";
+  color: var(--error-red);
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 40px;
+    letter-spacing: 3px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .input-container {
+    flex-direction: column;
+  }
+
+  .input-container input,
+  .input-container button,
+  .input-container .yellow-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {  
+  .input-container {
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 30px;
+  }
+
+}
+

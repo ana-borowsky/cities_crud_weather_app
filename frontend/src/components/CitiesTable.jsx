@@ -3,7 +3,7 @@ import { FaTrash, FaEdit } from "react-icons/fa"
 const CitiesTable = ({ cities, handleDelete, handleEdit }) => {
   return (
     <div className="table-container">
-      <table className="data-grid">
+      <table className="city-table">
         <thead>
           <tr>
             <th>Name</th>
